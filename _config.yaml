@@ -1,8 +1,10 @@
 # Files and directories to exclude from the compiled _site directory
 exclude:
-  - mise.toml
-  - mise.lock
   - Gemfile
   - Gemfile.lock
-  - README.md
   - .jekyll-cache
+  - .justfile
+  - justfile
+  - mise.lock
+  - mise.toml
+  - README.md

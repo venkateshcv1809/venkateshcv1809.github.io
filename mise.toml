@@ -4,3 +4,4 @@ lockfile = true
 [tools]
 ruby = "4.0.5"
 gem = "latest"
+just = "1.34.0"

@@ -4,6 +4,31 @@
 version = "0.0.1.alpha"
 backend = "gem"
 
+[[tools.just]]
+version = "1.34.0"
+backend = "aqua:casey/just"
+
+[tools.just."platforms.linux-arm64"]
+url = "https://github.com/casey/just/releases/download/1.34.0/just-1.34.0-aarch64-unknown-linux-musl.tar.gz"
+
+[tools.just."platforms.linux-arm64-musl"]
+url = "https://github.com/casey/just/releases/download/1.34.0/just-1.34.0-aarch64-unknown-linux-musl.tar.gz"
+
+[tools.just."platforms.linux-x64"]
+url = "https://github.com/casey/just/releases/download/1.34.0/just-1.34.0-x86_64-unknown-linux-musl.tar.gz"
+
+[tools.just."platforms.linux-x64-musl"]
+url = "https://github.com/casey/just/releases/download/1.34.0/just-1.34.0-x86_64-unknown-linux-musl.tar.gz"
+
+[tools.just."platforms.macos-arm64"]
+url = "https://github.com/casey/just/releases/download/1.34.0/just-1.34.0-aarch64-apple-darwin.tar.gz"
+
+[tools.just."platforms.macos-x64"]
+url = "https://github.com/casey/just/releases/download/1.34.0/just-1.34.0-x86_64-apple-darwin.tar.gz"
+
+[tools.just."platforms.windows-x64"]
+url = "https://github.com/casey/just/releases/download/1.34.0/just-1.34.0-x86_64-pc-windows-msvc.zip"
+
 [[tools.ruby]]
 version = "4.0.5"
 backend = "core:ruby"
