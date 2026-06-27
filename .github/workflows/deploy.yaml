@@ -1,9 +1,9 @@
-name: Deploy Personal Website
+name: CI/CD
 
 on:
   push:
     branches:
-      - develop
+      - main
 
 # Allow only one concurrent deployment channel
 concurrency:
