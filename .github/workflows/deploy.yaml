@@ -1,12 +1,20 @@
-name: Deploy Jekyll Site
+name: Deploy Personal Website
 
 on:
   push:
     branches:
       - develop
 
+# Grant permissions to configure GitHub Pages directly
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs in progress
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
@@ -23,14 +31,17 @@ jobs:
           ruby-version: '4.0.5'
           bundler-cache: true
 
+      - name: Setup Pages Configuration
+        uses: actions/configure-pages@v5
+
       - name: Compile Static Site Files
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
 
-      - name: Deploy Compiled Output to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-          publish_branch: master
+      - name: Upload Production Artifact
+        uses: actions/upload-pages-artifact@v3
+
+      - name: Direct Deploy to GitHub Pages Live Server
+        id: deployment
+        uses: actions/deploy-pages@v4
