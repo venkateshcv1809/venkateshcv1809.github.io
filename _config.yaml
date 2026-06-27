@@ -1,3 +1,10 @@
+# Sass configuration
+sass:
+  sass_dir: /assets/css/_sass
+  style: compressed
+  sourcemap: development
+  quiet_deps: true
+
 # Files and directories to exclude from the compiled _site directory
 exclude:
   - Gemfile
