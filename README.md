@@ -1,7 +1,7 @@
 # VENKATESH C V
 
-🌐 Portfolio: [venkateshcv1809.github.io](https://venkateshcv1809.github.io/)
-💼 LinkedIn: [linkedin.com/in/venkateshcv1809](https://www.linkedin.com/in/venkateshcv1809/)  
+🌐 Portfolio: [venkateshcv1809.github.io](https://venkateshcv1809.github.io/)  
+💼 LinkedIn: [linkedin.com/in/venkateshcv1809](https://www.linkedin.com/in/venkateshcv1809/)
 
 [![CI/CD](https://github.com/venkateshcv1809/venkateshcv1809.github.io/actions/workflows/deploy.yaml/badge.svg?branch=main)](https://github.com/venkateshcv1809/venkateshcv1809.github.io/actions/workflows/deploy.yaml)
 
