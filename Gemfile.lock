@@ -159,7 +159,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  bundle (~> 0.0.1)
+  bundle
   jekyll (~> 4.4.1)
 
 CHECKSUMS
