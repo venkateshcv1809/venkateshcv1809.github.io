@@ -1,0 +1,9 @@
+
+@mixin theme-root-variables($palette) {
+  :root {
+    --background-color: #{map-get($palette, base)};
+    --text-color: #{map-get($palette, text)};
+  }
+}
+
+$font-family: 'MesloLGS NF', monospace;

@@ -1,0 +1,167 @@
+@use "_config" as *;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: $font-family;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// --- Anchors & Interactive Elements ---
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+
+    &:hover {
+        color: var(--blue-color);
+        text-decoration: underline;
+    }
+
+    &:focus-visible {
+        outline: 1px dashed var(--blue-color);
+        outline-offset: 4px;
+    }
+}
+
+// --- Typography ---
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    color: var(--text-color);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+    margin-top: 1.25rem;
+}
+
+h5 {
+    font-size: 1rem;
+    margin-top: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h6 {
+    font-size: 0.9rem;
+    margin-top: 1.25rem;
+    color: var(--subtext-color);
+}
+
+p {
+    margin-bottom: 1.25rem;
+    color: var(--subtext-color);
+}
+
+strong {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+// --- Lists ---
+ul,
+ol {
+    margin-bottom: 1.25rem;
+    padding-left: 0;
+}
+
+ul {
+    list-style: none;
+
+    li {
+        position: relative;
+        padding-left: 1.25rem;
+        margin-bottom: 0.5rem;
+        color: var(--subtext-color);
+
+        &::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--blue-color);
+        }
+    }
+}
+
+ol {
+    list-style-type: decimal;
+    padding-left: 1.25rem;
+
+    li {
+        margin-bottom: 0.5rem;
+        color: var(--subtext-color);
+        padding-left: 0.25rem;
+
+        &::marker {
+            color: var(--blue-color);
+            font-weight: bold;
+        }
+    }
+}
+
+// --- Global Utilities ---
+.text-muted {
+    color: var(--subtext-color);
+}
+
+.text-success {
+    color: var(--green-color);
+}
+
+.text-danger {
+    color: var(--red-color);
+}
+
+.text-info {
+    color: var(--blue-color);
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+::selection {
+    background-color: var(--selection-background);
+    color: var(--text-color);
+}
