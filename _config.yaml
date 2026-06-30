@@ -1,3 +1,9 @@
+collections:
+  pages:
+    output: true
+    permalink: /:name
+    is_structural: true
+
 # Sass configuration
 sass:
   sass_dir: /assets/css/_sass
