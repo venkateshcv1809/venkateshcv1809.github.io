@@ -1,6 +1,4 @@
 ---
-layout: default
-title: Home
+layout: home
+title: VENKATESH C V
 ---
-
-# Hello World from Jekyll Markdown!

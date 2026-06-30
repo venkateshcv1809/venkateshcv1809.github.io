@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-  </head>
-  <body>
-    {{ content }}
-  </body>
+<html lang="en">
+{%- include head.html -%}
+
+<body>
+
+    <div class="wrapper">
+
+        {%- include header.html -%}
+
+        <main>
+            {{ content }}
+        </main>
+
+    </div>
+
+</body>
+
 </html>
