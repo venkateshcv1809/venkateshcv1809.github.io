@@ -1,0 +1,33 @@
+// css/_sass/components/_profile.scss
+
+.profile-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .profile-avatar {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%; // Makes your profile image a perfect terminal coin circle
+    border: 2px solid var(--color-accent);
+  }
+
+  .profile-bio {
+    flex: 1;
+    
+    h1 {
+      margin-bottom: 0.25rem;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

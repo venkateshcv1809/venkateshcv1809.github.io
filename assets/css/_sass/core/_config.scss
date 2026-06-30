@@ -1,9 +1,98 @@
-
+// Theme token layer. This mixin receives a Catppuccin palette map and emits the
+// standardized CSS custom properties used by the design system.
 @mixin theme-root-variables($palette) {
-  :root {
-    --background-color: #{map-get($palette, base)};
-    --text-color: #{map-get($palette, text)};
-  }
+    :root {
+        /* Surface and background tokens */
+        --background-primary: #{map-get($palette, base)};
+        --background-secondary: #{map-get($palette, mantle)};
+        --background-tertiary: #{map-get($palette, surface0)};
+        --background-muted: #{map-get($palette, surface1)};
+        --background-card: #{map-get($palette, surface0)};
+        --background-code: #{map-get($palette, crust)};
+
+        /* Code tokens */
+        --code-background: #{map-get($palette, crust)};
+        --code-inline-background: #{rgba(map-get($palette, crust), 0.9)};
+        --code-comment: #{map-get($palette, surface2)};
+        --code-keyword: #{map-get($palette, mauve)};
+        --code-string: #{map-get($palette, green)};
+        --code-function: #{map-get($palette, blue)};
+        --code-number: #{map-get($palette, yellow)};
+        --code-operator: #{map-get($palette, sapphire)};
+        --code-variable: #{map-get($palette, red)};
+        --code-punctuation: #{map-get($palette, text)};
+        --code-tag: #{map-get($palette, pink)};
+
+        /* Text tokens */
+        --text-primary: #{map-get($palette, text)};
+        --text-secondary: #{map-get($palette, subtext1)};
+        --text-muted: #{map-get($palette, subtext0)};
+        --text-strong: #{map-get($palette, text)};
+        --text-link: #{map-get($palette, blue)};
+        --text-link-hover: #{map-get($palette, mauve)};
+        --text-selection: #{map-get($palette, sapphire)};
+
+        /* Border tokens */
+        --border-default: #{map-get($palette, surface1)};
+        --border-subtle: #{map-get($palette, surface2)};
+        --border-strong: #{map-get($palette, overlay0)};
+        --surface-border: #{map-get($palette, surface1)};
+
+        /* Semantic state tokens */
+        --color-info: #{map-get($palette, sky)};
+        --color-success: #{map-get($palette, green)};
+        --color-warning: #{map-get($palette, yellow)};
+        --color-danger: #{map-get($palette, red)};
+        --color-accent: #{map-get($palette, mauve)};
+
+        /* Focus / interaction */
+        --focus-ring: #{rgba(map-get($palette, sapphire), 0.35)};
+        --selection-background: #{rgba(map-get($palette, sapphire), 0.35)};
+        --shadow-default: 0 16px 40px #{rgba(map-get($palette, base), 0.08)};
+
+        /* Typography */
+        --font-mono: 'MesloLGS NF', monospace;
+
+        --fs-2xs: 0.6875rem;
+        --fs-xs: 0.75rem;
+        --fs-sm: 0.875rem;
+        --fs-base: 1rem;
+        --fs-md: 1.125rem;
+        --fs-lg: 1.25rem;
+        --fs-xl: 1.5rem;
+        --fs-2xl: 2rem;
+        --fs-3xl: 2.5rem;
+
+        --line-height-body: 1.65;
+        --line-height-heading: 1.25;
+
+        /* Spacing */
+        --space-1: 0.25rem;
+        --space-2: 0.5rem;
+        --space-3: 0.75rem;
+        --space-4: 1rem;
+        --space-5: 1.5rem;
+        --space-6: 2rem;
+        --space-7: 3rem;
+        --space-8: 4rem;
+
+        /* Geometry */
+        --radius-sm: 4px;
+        --radius-md: 8px;
+        --radius-lg: 12px;
+        --radius-xl: 18px;
+
+        /* Layout */
+        --width-content: 720px;
+        --width-sidebar: 260px;
+
+        /* Motion */
+        --transition-duration: 180ms;
+        --transition-curve: cubic-bezier(0.4, 0, 0.2, 1);
+    }
 }
 
-$font-family: 'MesloLGS NF', monospace;
+// Global Sass constants used during the transition to the standardized config.
+$mobile-breakpoint: 768px;
+$container-max-width: 800px;
+$container-padding: 1.5rem;

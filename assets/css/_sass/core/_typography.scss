@@ -1,0 +1,151 @@
+// --- Anchors & Interactive Elements ---
+a {
+    color: var(--text-link);
+    text-decoration: underline dotted;
+    text-underline-offset: 2px;
+    transition: color var(--transition-duration) var(--transition-curve), text-decoration-color var(--transition-duration) var(--transition-curve);
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--text-link-hover);
+    text-decoration-color: currentColor;
+}
+
+a:focus-visible {
+    outline: 1px dashed var(--color-info);
+    outline-offset: 4px;
+}
+
+strong {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+em {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+// --- Typography ---
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    color: var(--text-primary);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+    margin-top: 1.25rem;
+}
+
+h5 {
+    font-size: 1rem;
+    margin-top: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h6 {
+    font-size: 0.9rem;
+    margin-top: 1.25rem;
+    color: var(--text-secondary);
+}
+
+p {
+    margin-bottom: 1.25rem;
+    color: var(--text-secondary);
+}
+
+strong {
+    color: var(--text-primary);
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+// --- Lists ---
+ul,
+ol {
+    margin-bottom: 1.25rem;
+    padding-left: 0;
+}
+
+ul {
+    list-style: none;
+
+    li {
+        position: relative;
+        padding-left: 1.4rem;
+        margin-bottom: 0.65rem;
+        color: var(--text-secondary);
+
+        &::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--color-info);
+            font-size: 0.95em;
+            line-height: 1.2;
+        }
+    }
+
+    ul ul {
+        margin-top: 0.4rem;
+        padding-left: 1.6rem;
+    }
+
+    ul ul li {
+        padding-left: 1.5rem;
+    }
+
+    ul ul li::before {
+        content: "◦";
+    }
+
+    ul ul ul {
+        padding-left: 1.8rem;
+    }
+
+    ul ul ul li::before {
+        content: "▹";
+    }
+}
+
+ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+
+    li {
+        margin-bottom: 0.5rem;
+        color: var(--text-secondary);
+        padding-left: 0.25rem;
+
+        &::marker {
+            color: var(--color-info);
+            font-weight: bold;
+        }
+    }
+}
