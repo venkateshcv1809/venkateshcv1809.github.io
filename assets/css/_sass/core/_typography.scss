@@ -1,3 +1,96 @@
+// --- Typography ---
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-primary);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    padding-top: 1.5rem;
+}
+
+$heading-styles: (
+    h1: (font-size: 2.5rem),
+    h2: (font-size: 2rem),
+    h3: (font-size: 1.25rem),
+    h4: (font-size: 1.1rem),
+    h5: (font-size: 1rem),
+    h6: (font-size: 0.9rem)
+);
+
+@each $heading, $styles in $heading-styles {
+    #{$heading} {
+        font-size: map-get($styles, font-size);
+    }
+}
+
+p {
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+}
+
+strong {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+em {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+sub, sup {
+  font-size: var(--fs-xs);
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+del,
+s {
+  text-decoration: line-through;
+}
+
+mark {
+  background-color: color-mix(in srgb, var(--color-warning) 20%, transparent);
+  color: var(--color-warning);
+  padding: 0.125em 0.25em;
+  border-radius: var(--radius-sm);
+}
+
+kbd {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  font-weight: bold;
+  color: var(--text-primary);
+  background-color: var(--background-tertiary);
+  
+  // Creates the realistic 3D keycap bezel using the design system tokens
+  border: 1px solid var(--border-strong);
+  border-bottom: 3px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  
+  padding: var(--space-1) var(--space-2);
+  margin: 0 var(--space-1);
+  white-space: nowrap;
+}
+
+hr {
+  border-top: var(--border-default);
+  margin: 2rem 0;
+}
+
 // --- Anchors & Interactive Elements ---
 a {
     color: var(--text-link);
@@ -15,75 +108,6 @@ a:focus-visible {
 a:focus-visible {
     outline: 1px dashed var(--color-info);
     outline-offset: 4px;
-}
-
-strong {
-    color: var(--text-primary);
-    font-weight: 700;
-}
-
-em {
-    color: var(--text-secondary);
-    font-style: italic;
-}
-
-// --- Typography ---
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: bold;
-    color: var(--text-primary);
-    line-height: 1.25;
-    margin-bottom: 1rem;
-}
-
-h1 {
-    font-size: 2rem;
-}
-
-h2 {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-}
-
-h3 {
-    font-size: 1.25rem;
-    margin-top: 1.5rem;
-}
-
-h4 {
-    font-size: 1.1rem;
-    margin-top: 1.25rem;
-}
-
-h5 {
-    font-size: 1rem;
-    margin-top: 1.25rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-h6 {
-    font-size: 0.9rem;
-    margin-top: 1.25rem;
-    color: var(--text-secondary);
-}
-
-p {
-    margin-bottom: 1.25rem;
-    color: var(--text-secondary);
-}
-
-strong {
-    color: var(--text-primary);
-    font-weight: bold;
-}
-
-em {
-    font-style: italic;
 }
 
 // --- Lists ---
