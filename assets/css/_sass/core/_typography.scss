@@ -91,6 +91,21 @@ hr {
   margin: 2rem 0;
 }
 
+//--- Blockquotes ---
+blockquote {
+  background-color: transparent; 
+  border-left: 4px solid var(--border-strong);
+  padding: var(--space-2) 0 var(--space-2) var(--space-5);
+  margin: var(--space-5) 0;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+blockquote p {
+  margin: 0;
+  line-height: var(--line-height-body);
+}
+
 // --- Anchors & Interactive Elements ---
 a {
     color: var(--text-link);
