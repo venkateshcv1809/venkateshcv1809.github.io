@@ -1,0 +1,4 @@
+@use "palette/_mocha" as *;
+@use "core/_config" as *;
+
+@include define-theme($palette);

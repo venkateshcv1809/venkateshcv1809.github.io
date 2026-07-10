@@ -1,0 +1,4 @@
+@use "palette/_latte" as *;
+@use "core/_config" as *;
+
+@include define-theme($palette);

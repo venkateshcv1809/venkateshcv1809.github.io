@@ -1,0 +1,143 @@
+// ==========================================================
+// Terminal Window Bar
+// ==========================================================
+
+.tmux-status {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: var(--background-secondary);
+    border-bottom: 1px solid var(--border-default);
+}
+
+.tmux-status-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+
+    min-height: 2.75rem;
+
+    padding: 0 var(--space-4);
+}
+
+.tmux-status-windows {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.tmux-window {
+    display: inline-flex;
+    align-items: stretch;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+
+    text-decoration: none;
+
+    transition: border-color var(--transition-fast) var(--transition-curve);
+
+    &:not(.is-active):hover {
+        border-color: var(--border-strong);
+
+        .tmux-window-icon {
+            background: var(--window-hover);
+            color: var(--background-primary);
+        }
+    }
+
+    &.is-active {
+        cursor: default;
+
+        .tmux-window-icon {
+            background: var(--window-active);
+        }
+    }
+}
+
+/* ==========================================================
+ * Window Identifier
+ * ========================================================== */
+
+.tmux-window-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2rem;
+    flex-shrink: 0;
+
+    background: var(--window-default);
+    color: var(--background-primary);
+
+    border-right: 1px solid var(--border-default);
+
+    transition:
+        background var(--transition-fast) var(--transition-curve),
+        color var(--transition-fast) var(--transition-curve);
+
+    svg {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+/* ==========================================================
+ * Window Title
+ * ========================================================== */
+
+.tmux-window-title {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    min-height: 1.25rem;
+    padding: 0 var(--space-2);
+
+    flex-shrink: 0;
+
+    background: var(--background-primary);
+    color: var(--text-primary);
+
+    font-size: var(--fs-sm);
+    white-space: nowrap;
+}
+
+/* ==========================================================
+ * Active Window Indicator
+ * ========================================================== */
+
+.tmux-window-active {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: auto;
+    padding-left: var(--space-2);
+
+    color: inherit;
+
+    svg {
+        width: 0.9rem;
+        height: 0.9rem;
+    }
+}
+
+/* ==========================================================
+ * Breadcrumb
+ * ========================================================== */
+
+.tmux-status-breadcrumb {
+    margin-left: auto;
+
+    color: var(--text-muted);
+
+    font-size: var(--fs-sm);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
