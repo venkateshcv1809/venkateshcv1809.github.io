@@ -1,0 +1,8 @@
+header:
+  - title: "~"
+    url: /
+    icon: home
+
+  - title: style-guide
+    url: /style-guide/
+    icon: palette

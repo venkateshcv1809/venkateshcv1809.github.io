@@ -1,0 +1,7 @@
+segments:
+    left:
+        - page-title
+
+    right:
+        - copyright
+        - github
