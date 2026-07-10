@@ -1,12 +1,41 @@
-<header class="navbar">
-    <div class="navbar-brand">
-        <img src="{{ "/assets/favicon/favicon-32x32.png" | relative_url }}" alt="CV" width="32" height="32">
-    </div>
-    <nav class="navbar-links">
-        <a href="/">Home</a>
-        <span>|</span>
-        <a href="/markdown">Markdown</a>
-        <span>|</span>
-        <a href="/components">Components</a>
+<header class="tmux-status">
+
+    <nav class="tmux-status-nav">
+
+        <div class="tmux-status-windows">
+
+            {% for item in navigation.header %}
+
+                <a
+                    href="{{ item.url | relative_url }}"
+                    class="tmux-window{% if page.url == item.url %} is-active{% endif %}"
+                >
+
+                    <span class="tmux-window-icon">
+                    </span>
+
+                    <span class="tmux-window-title">
+
+                        {{ item.title }}
+
+                        {% if page.url == item.url %}
+                            <span class="tmux-window-active">
+                                {% include icon.html name=site.data.site.icons.window.active %}
+                            </span>
+                        {% endif %}
+
+                    </span>
+
+                </a>
+
+            {% endfor %}
+
+        </div>
+
+        <div class="tmux-status-breadcrumb">
+            {{ page.title }}
+        </div>
+
     </nav>
+
 </header>

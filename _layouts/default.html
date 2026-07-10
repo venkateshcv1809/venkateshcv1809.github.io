@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-{%- include head.html -%}
+    {% assign metadata = site.data.config.meta %}
+    {% assign navigation = site.data.config.navigation %}
+    {% include head.html %}
 
-<body>
+    <body>
 
-    <div class="wrapper">
+        {% include header.html %}
 
-        {%- include header.html -%}
-
-        <main>
+        <main class="layout">
             {{ content }}
         </main>
 
-    </div>
+        {% include footer.html %}
 
-</body>
+    </body>
 
 </html>

@@ -1,0 +1,16 @@
+{% comment %}
+Reusable icon wrapper.
+
+Usage:
+    {% include icon.html name="home" %}
+    {% include icon.html name=item.icon %}
+
+The custom `icon` tag is responsible for:
+- Recursively locating SVGs under assets/icons/
+- Inlining the SVG
+- Caching the result
+{% endcomment %}
+
+<span class="icon" aria-hidden="true">
+    {% icon include.name %}
+</span>

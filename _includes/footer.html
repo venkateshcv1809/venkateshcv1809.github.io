@@ -1,0 +1,30 @@
+<footer class="statusline">
+
+    <div class="statusline-left">
+
+        <span class="segment">
+            {{ page.title | default: "Home" }}
+        </span>
+
+    </div>
+
+    <div class="statusline-right">
+
+        <span class="segment">
+            © {{ "now" | date: "%Y" }} {{ metadata.author.name }}
+        </span>
+
+        <a
+            class="segment segment--icon"
+            href="{{ metadata.repository.url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View source code">
+
+            {% icon github %}
+
+        </a>
+
+    </div>
+
+</footer>

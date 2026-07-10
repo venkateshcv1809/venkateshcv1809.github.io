@@ -1,14 +1,59 @@
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/favicon/apple-touch-icon.png" | relative_url }}" />
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicon/favicon-32x32.png" | relative_url }}" />
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/favicon/favicon-16x16.png" | relative_url }}" />
-  <link rel="manifest" href="{{ "/assets/favicon/site.webmanifest" | relative_url }}" />
+  <title>
+        {%- if page.title -%}
+            {{ page.title }} | {{ metadata.title }}
+        {%- else -%}
+            {{ metadata.title }}
+        {%- endif -%}
+  </title>
 
-  <link rel="stylesheet" type="text/css" href="{{ "/assets/css/light.css" | relative_url }}" media="screen and (prefers-color-scheme: light)">
-  <link rel="stylesheet" type="text/css" href="{{ "/assets/css/dark.css" | relative_url }}" media="screen and (prefers-color-scheme: dark)">
+  <meta
+    name="description"
+    content="{{ page.description | default: metadata.description | escape }}"
+  />
+
+  <meta name="author" content="{{ metadata.author.name }}" />
+
+  <meta name="color-scheme" content="light dark" />
+
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="{{ '/assets/favicon/apple-touch-icon.png' | relative_url }}"
+  />
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="{{ '/assets/favicon/favicon-32x32.png' | relative_url }}"
+  />
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="{{ '/assets/favicon/favicon-16x16.png' | relative_url }}"
+  />
+
+  <link
+    rel="manifest"
+    href="{{ '/assets/favicon/site.webmanifest' | relative_url }}"
+  />
+
+  <link
+    rel="stylesheet"
+    href="{{ '/assets/css/light.css' | relative_url }}"
+    media="(prefers-color-scheme: light)"
+  />
+
+  <link
+    rel="stylesheet"
+    href="{{ '/assets/css/dark.css' | relative_url }}"
+    media="(prefers-color-scheme: dark)"
+  />
 </head>
