@@ -1,23 +1,27 @@
 url: "https://venkateshcv1809.github.io"
 baseurl: ""
 
-collections:
-  pages:
-    output: true
-    permalink: /:name
-    is_structural: true
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
 
 sass:
-  style: compressed
-  sourcemap: development
-  quiet_deps: true
+    style: compressed
+    sourcemap: development
+    quiet_deps: true
+
+collections:
+    pages:
+        output: true
+        permalink: /:name
+        is_structural: true
 
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - .jekyll-cache
-  - .justfile
-  - justfile
-  - mise.lock
-  - mise.toml
-  - README.md
+    - Gemfile
+    - Gemfile.lock
+    - .jekyll-cache
+    - .justfile
+    - justfile
+    - mise.lock
+    - mise.toml
+    - README.md
