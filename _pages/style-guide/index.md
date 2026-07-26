@@ -17,9 +17,11 @@ The purpose is to verify consistency, spacing, typography, syntax highlighting a
 - [Typography](typography/)
 - [Markdown](markdown/)
 - [Code](code/)
+- [Mathematics](mathematics/)
 - [Tables](tables/)
 - [Media](media/)
 - [Components](components/)
+- [Plugins](plugins/)
 - [Example Article](article/)
 - [Playground](playground/)
 

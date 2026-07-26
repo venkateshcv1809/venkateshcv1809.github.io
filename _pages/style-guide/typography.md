@@ -6,12 +6,6 @@ permalink: /style-guide/typography/
 
 # Typography
 
-The quick brown fox jumps over the lazy dog.
-
-Pack my box with five dozen liquor jugs.
-
-Sphinx of black quartz, judge my vow.
-
 ---
 
 ## Headings
@@ -30,13 +24,44 @@ Sphinx of black quartz, judge my vow.
 
 ---
 
+Alternate Heading One
+=====================
+
+Alternate Heading Two
+---------------------
+
+---
+
+## Long Heading
+
+## This is an intentionally long heading that spans multiple lines to verify wrapping, spacing and vertical rhythm throughout the content area
+
+---
+
 ## Paragraphs
 
 Good typography disappears.
 
-Readers should focus on the content rather than the styling.
+Readers should focus on the content rather than the styling. This portfolio is designed around long-form technical writing, engineering notes and developer documentation.
 
-This portfolio is designed around long-form technical writing, engineering notes and developer documentation.
+---
+
+## Long Paragraph
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer tincidunt, sapien sed commodo aliquet, turpis neque varius libero, vitae viverra arcu erat sed justo. Donec non erat sed libero pretium fermentum. Nulla facilisi.
+
+---
+
+## Line Breaks
+
+This sentence ends here.
+This sentence continues on the next line.
+
+This sentence ends with two spaces.  
+This sentence starts with a hard line break.
+
+This sentence ends here.\
+This starts on the next line.
 
 ---
 
@@ -54,43 +79,47 @@ Normal text
 
 ---
 
-## Inline Code
+## Mixed Emphasis
 
-Install dependencies using `cargo build`.
+Normal **Bold** Normal
 
-Run tests using `cargo test`.
+Normal *Italic* Normal
 
-The `Result<T, E>` type is commonly used in Rust.
+Normal ***Bold Italic*** Normal
 
-Nested backticks:
+Normal ~~Strikethrough~~ Normal
 
-``cargo fmt``
+---
+
+## Combined Formatting
+
+***Bold Italic***
+
+**Bold with `inline code`**
+
+*Italic with `inline code`*
+
+~~**Bold Strikethrough**~~
+
+***`Bold Italic Code`***
 
 ---
 
 ## Subscript & Superscript
 
-Water: H~2~O
+Water - H~2~O
 
-Carbon dioxide: CO~2~
+Carbon dioxide - CO~2~
 
-Sulfuric acid: H~2~SO~4~
+Sulfuric acid - H~2~SO~4~
 
-Square:
+Square - x^2^
 
-x^2^
+Cube - a^3^
 
-Cube:
+Binary - 2^8^ = 256
 
-a^3^
-
-Binary:
-
-2^8^ = 256
-
-IPv6:
-
-2^128^
+IPv6 - 2^128^
 
 ---
 
@@ -101,6 +130,8 @@ Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>
 Press <kbd>Esc</kbd>
 
 Press <kbd>:</kbd>
+
+Press <kbd>⌘</kbd> + <kbd>K</kbd>
 
 ---
 
@@ -120,6 +151,8 @@ Press <kbd>:</kbd>
 
 ## Abbreviation
 
+The following abbreviations should display their expanded meaning on hover.
+
 <abbr title="HyperText Markup Language">HTML</abbr>
 
 <abbr title="Cascading Style Sheets">CSS</abbr>
@@ -128,35 +161,119 @@ Press <kbd>:</kbd>
 
 ---
 
-## Links
+## Smart Typography
 
-Internal link
+"Double Quotes"
 
-[Markdown Showcase](../markdown/)
+'Single Quotes'
 
-External link
+...Ellipsis
 
-https://www.rust-lang.org
+Em---Dash
 
-Named link
+En--Dash
 
-[Rust Programming Language](https://www.rust-lang.org)
+(Parentheses)
 
-Email
+[Brackets]
 
-<example@example.com>
+{Braces}
 
----
-
-## Horizontal Rule
+\<Angle Brackets>
 
 ---
 
-Above
+## Numbers
+
+0123456789
+
+3.141592653589793
+
+-42
+
++99
+
+0xFF
+
+0b101010
+
+1_000_000
 
 ---
 
-Below
+## Symbols
+
+@ # $ % ^ & * _ + =
+
+< > \| / \
+
+→ ← ↑ ↓
+
+✓ ✗
+
+© ® ™
+
+∞ ≠ ≈ ≤ ≥
+
+---
+
+## Unicode
+
+தமிழ்
+
+日本語
+
+한국어
+
+Español
+
+Français
+
+λ
+
+π
+
+Ω
+
+α β γ δ
+
+µ
+
+°
+
+℃
+
+₹ € £ ¥
+
+---
+
+## Character Comparison
+
+Il1
+
+O0
+
+rn m
+
+{}[]()
+
+()[]{}
+
+---
+
+## Horizontal Rules
+
+---
+
+Using Dash
+
+***
+
+Using Asterisk
+
+___
+
+Using Underscore
 
 ---
 

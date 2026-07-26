@@ -6,178 +6,102 @@ permalink: /style-guide/components/
 
 # Components
 
-These are higher-level content blocks commonly used in technical articles.
+This page demonstrates reusable interface components used throughout the portfolio.
 
 ---
 
-# Terminal Session
+## Alert
 
-```console
-$ pwd
-/home/venkatesh/projects/portfolio
+> ℹ️ Information message.
 
-$ bundle exec jekyll serve
+> ✅ Success message.
 
-Configuration file: _config.yml
+> ⚠️ Warning message.
 
-Server address: http://127.0.0.1:4000/
-
-Server running...
-```
+> ❌ Error message.
 
 ---
 
-# File Tree
+## Badge
 
-```text
-portfolio/
-├── _layouts
-│   ├── default.html
-│   └── post.html
-├── _sass
-│   ├── core
-│   ├── layout
-│   ├── components
-│   └── theme
-├── assets
-├── blog
-└── index.md
-```
+<span class="badge">New</span>
+
+<span class="badge">Experimental</span>
+
+<span class="badge">Deprecated</span>
 
 ---
 
-# Git Diff
+## Callout
 
-```diff
-+ Added typography tokens
-+ Added syntax highlighting
-+ Added table styles
-
-- Removed legacy variables
-```
+> **Tip**
+>
+> Prefer small, focused examples.
 
 ---
 
-# Logs
+## Card
 
-```text
-INFO  Loading configuration...
+<div class="card">
 
-INFO  Parsing markdown...
+### Sentinel Genesis
 
-WARN  Missing alt text on image.
+Autonomous SDLC powered by local AI.
 
-ERROR Failed to locate assets/logo.svg
-```
+</div>
 
 ---
 
-# Configuration
+## Breadcrumb
 
-```yaml
-theme:
-  name: catppuccin
-  mode: mocha
-
-code:
-  line_numbers: true
-
-markdown:
-  footnotes: true
-```
+Home → Blog → Jekyll → Components
 
 ---
 
-# Architecture
+## Tags
 
-```text
-Markdown
+`Rust`
 
-↓
+`Neovim`
 
-Jekyll
+`Linux`
 
-↓
+`Embedded`
 
-Liquid
-
-↓
-
-HTML
-
-↓
-
-SCSS
-
-↓
-
-Portfolio
-```
+`AI`
 
 ---
 
-# Developer Workflow
+## Status
 
-```text
-Read
+🟢 Stable
 
-↓
+🟡 Experimental
 
-Understand
-
-↓
-
-Practice
-
-↓
-
-Build
-
-↓
-
-Document
-
-↓
-
-Teach
-```
+🔴 Deprecated
 
 ---
 
-# Keyboard Shortcuts
+## Progress
 
-| Action | Shortcut |
-|---------|----------|
-| Command Palette | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> |
-| Save | <kbd>Ctrl</kbd> + <kbd>S</kbd> |
-| Find | <kbd>Ctrl</kbd> + <kbd>F</kbd> |
-| Replace | <kbd>Ctrl</kbd> + <kbd>H</kbd> |
+████████░░ 80%
 
 ---
 
-# Checklist
+## Timeline
 
-- [x] Typography
-- [x] Markdown
-- [x] Code
-- [x] Tables
-- [x] Images
-- [ ] Blog
-- [ ] Projects
-- [ ] Resume
+- 2025 — Started AI exploration
+- 2026 — Built Assets Vault
+- 2027 — Embedded & Robotics
 
 ---
 
-# Mixed Content
+## Statistics
 
-> Documentation should be **easy to read**, include `examples`, and provide practical guidance.
+Projects: **12**
 
-Example:
+Articles: **42**
 
-```rust
-fn main() {
-    println!("Hello Portfolio");
-}
-```
+Languages: **5**
 
 ---

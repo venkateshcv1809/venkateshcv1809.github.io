@@ -4,9 +4,9 @@ title: Markdown
 permalink: /style-guide/markdown/
 ---
 
-# Markdown Showcase
+# Markdown
 
-Everything below should render correctly.
+This page demonstrates the core Markdown syntax supported by the portfolio.
 
 ---
 
@@ -23,6 +23,13 @@ Nested
     - Systems
     - Backend
     - Frontend
+
+Deeply Nested
+
+- Level One
+    - Level Two
+        - Level Three
+            - Level Four
 
 ---
 
@@ -44,16 +51,6 @@ Nested
 
 ---
 
-## Task Lists
-
-- [x] Typography
-- [x] Code
-- [ ] Tables
-- [ ] Images
-- [ ] Components
-
----
-
 ## Mixed Lists
 
 1. First
@@ -63,18 +60,32 @@ Nested
 
 2. Second
 
+    1. Nested Ordered
+    2. Nested Ordered
+
+---
+
+## Task Lists
+
+- [x] Typography
+- [x] Markdown
+- [x] Code
+- [ ] Tables
+- [ ] Media
+- [ ] Components
+
 ---
 
 ## Definition Lists
 
 Rust
-: Memory-safe systems language.
+: Memory-safe systems programming language.
 
 Jekyll
 : Static site generator.
 
 Catppuccin
-: Soothing pastel theme.
+: Pastel colour palette.
 
 ---
 
@@ -82,7 +93,7 @@ Catppuccin
 
 This sentence has a footnote.[^1]
 
-Another one.[^note]
+Another footnote appears here.[^note]
 
 [^1]: Simple footnote.
 
@@ -93,13 +104,50 @@ Another one.[^note]
 
 ---
 
-## Escaping
+## Reference-style Links
+
+Markdown Guide was written by [Matt Cone][author].
+
+Visit the [Markdown Guide][guide].
+
+[author]: https://www.markdownguide.org
+[guide]: https://www.markdownguide.org
+
+---
+
+## Automatic Links
+
+<https://www.rust-lang.org>
+
+<https://jekyllrb.com>
+
+<example@example.com>
+
+---
+
+## Heading IDs
+
+### Installation {#installation}
+
+### Configuration {#configuration}
+
+### Deployment {#deployment}
+
+Jump to the [Configuration](#configuration) section.
+
+---
+
+## Escaping Characters
 
 \*Not italic\*
 
-\# Not heading
+\# Not a heading
 
 \`Not code\`
+
+\[Literal brackets\]
+
+\\ Backslash
 
 ---
 
@@ -123,24 +171,19 @@ Français
 
 ---
 
-## Long Paragraph
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer tincidunt, sapien sed commodo aliquet, turpis neque varius libero, vitae viverra arcu erat sed justo. Donec non erat sed libero pretium fermentum. Nulla facilisi.
-
----
-
 ## Details
 
-<details>
-
+<details markdown="1">
 <summary>Expandable Section</summary>
 
+<div markdown="1">
 This content should be hidden until expanded.
 
 It contains **Markdown**, `inline code` and lists.
 
 - Item One
 - Item Two
+</div>
 
 </details>
 
@@ -150,24 +193,22 @@ It contains **Markdown**, `inline code` and lists.
 
 <div>
 
-HTML inside Markdown.
+This HTML block should render correctly.
+
+<strong>Bold HTML</strong>
+
+<em>Italic HTML</em>
 
 </div>
 
+Inline HTML works inside a sentence using <mark>mark</mark>, <sup>sup</sup> and <sub>sub</sub>.
+
 ---
 
-## Mixed Content
+## Comments
 
-> Blockquote containing:
+<!-- This comment should not be rendered. -->
 
-- List
-
-- **Bold**
-
-- `Code`
-
-- H~2~O
-
-- x^2^
+This text should appear normally.
 
 ---
