@@ -1,9 +1,12 @@
 url: "https://venkateshcv1809.github.io"
 baseurl: ""
 
+# Build settings
 markdown: kramdown
 kramdown:
-  syntax_highlighter: rouge
+    input: GFM
+    syntax_highlighter: rouge
+    smart_quotes: lsquo,rsquo,ldquo,rdquo
 
 sass:
     style: compressed
