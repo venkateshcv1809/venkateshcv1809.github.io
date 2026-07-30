@@ -2,8 +2,7 @@ module Jekyll
     module Markdown
         module Highlight
 
-            PATTERN = /==(.+?)==/.freeze
-
+            PATTERN = /(?<!\=)==([^\n=][^\n]*?)==(?!\=)/.freeze
             def self.process(content, _site)
 
                 content.gsub(
