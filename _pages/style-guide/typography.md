@@ -55,7 +55,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant m
 ## Line Breaks
 
 This sentence ends here.
-This sentence continues on the next line.
+This sentence continues in the same line.
 
 This sentence ends with two spaces.  
 This sentence starts with a hard line break.
