@@ -1,12 +1,15 @@
 url: "https://venkateshcv1809.github.io"
 baseurl: ""
 
-# Build settings
+# Markdown renderer
 markdown: kramdown
 kramdown:
     input: GFM
     syntax_highlighter: rouge
     smart_quotes: lsquo,rsquo,ldquo,rdquo
+    hard_wrap: false
+    auto_ids: true
+    footnote_nr: 1
 
 sass:
     style: compressed
@@ -22,9 +25,12 @@ collections:
 exclude:
     - Gemfile
     - Gemfile.lock
-    - .jekyll-cache
-    - .justfile
-    - justfile
-    - mise.lock
-    - mise.toml
     - README.md
+    - .jekyll-cache
+    - .bundle
+    - vendor
+    - _site
+    - justfile
+    - .justfile
+    - mise.toml
+    - mise.lock
