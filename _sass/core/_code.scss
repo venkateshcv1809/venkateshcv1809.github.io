@@ -11,16 +11,20 @@
 // Inline Code
 // ----------------------------------------------------------
 
-code {
-    font-family: var(--font-mono);
-    font-size: 0.9em;
-
-    color: var(--text-primary);
-    background: var(--code-inline-background);
-
+code.highlighter-rouge {
+    margin: 0;
     padding: var(--space-1) var(--space-2);
-    border-radius: var(--radius-sm);
+}
 
+.highlighter-rouge {
+    background: var(--code-background);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    cursor: text;
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    margin-bottom: var(--space-5);
+    overflow-inline: auto;
     white-space: break-spaces;
 }
 
@@ -28,44 +32,13 @@ code {
 // Code Blocks
 // ----------------------------------------------------------
 
-pre,
-pre code,
-.highlighter-rouge pre,
-.highlight pre {
-    font-family: var(--font-mono);
-    font-size: 0.95em;
-    line-height: var(--line-height-body);
+.highlighter-rouge pre {
+    margin: 0;
     white-space: pre;
 }
 
-figure.highlight,
-.highlighter-rouge {
-    margin-bottom: var(--space-5);
-    overflow: hidden;
-}
-
-figure.highlight > pre,
-.highlighter-rouge {
-    background: var(--code-background);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-md);
-}
-
-figure.highlight > pre,
-.highlighter-rouge .highlight {
-    padding: var(--space-3);
-}
-
-.highlight pre,
-figure.highlight pre,
-.highlighter-rouge pre {
-    margin: 0;
-    background: transparent;
-}
-
-.highlight figure,
-.highlighter-rouge figure {
-    margin: 0;
+.highlighter-rouge pre.highlight {
+    padding: var(--space-3) var(--space-4);
 }
 
 .highlight ::selection {
@@ -77,26 +50,33 @@ figure.highlight pre,
 // ----------------------------------------------------------
 
 .rouge-table {
-    width: 100%;
+    background: inherit;
+    border: 0;
     border-collapse: collapse;
     border-spacing: 0;
+    margin: calc(var(--space-3) * -1) calc(var(--space-4) * -1);
+    overflow: inherit;
+    width: 100%;
 }
 
-.rouge-table td.gutter.gl {
+.rouge-table tr:hover {
+    background: inherit;
+}
+
+.rouge-table td.rouge-gutter {
+    background: color-mix(in srgb, var(--background-secondary) 20%, transparent);
+    border-right: 1px solid color-mix(in srgb, var(--border-default) 50%, transparent);
+    color: var(--code-comment);
+    cursor: default;
     padding: var(--space-3);
-    vertical-align: top;
-    background: color-mix(in srgb, var(--background-secondary) 40%, transparent);
+    text-align: right;
+    user-select: none;
+    white-space: nowrap;
+    width: var(--space-7);
 }
 
-.rouge-table td.code {
+.rouge-table td.rouge-code {
     padding: var(--space-3) var(--space-4);
-}
-
-.rouge-table td.code pre,
-.rouge-table td.gutter.gl pre.lineno {
-    margin: 0;
-    padding: 0;
-    line-height: var(--line-height-body);
 }
 
 // ----------------------------------------------------------
@@ -112,6 +92,13 @@ figure.highlight pre,
 .highlight span.gp {
     color: var(--code-comment);
     font-style: italic;
+}
+
+// ----------------------------------------------------------
+// Highlighted Lines
+// ----------------------------------------------------------
+.highlight .hll {
+    background: color-mix(in srgb, var(--color-info) 12%, transparent);
 }
 
 // ----------------------------------------------------------
@@ -153,10 +140,19 @@ figure.highlight pre,
 // Tags & Types
 // ----------------------------------------------------------
 
-.highlight span.na,
+// Types
 .highlight span.nc,
-.highlight span.nk,
-.highlight span.nt,
+.highlight span.nk {
+    color: var(--code-type);
+}
+
+// HTML/XML
+.highlight span.na,
+.highlight span.nt {
+    color: var(--code-tag);
+}
+
+// Rare Rouge tokens
 .highlight span.nw,
 .highlight span.re {
     color: var(--code-tag);
@@ -174,7 +170,9 @@ figure.highlight pre,
 .highlight span.mn,
 .highlight span.mo,
 .highlight span.mx,
-.highlight span.il {
+.highlight span.il,
+.highlight span.l,
+.highlight span.ld {
     color: var(--code-number);
 }
 
@@ -252,6 +250,23 @@ figure.highlight pre,
 }
 
 // ----------------------------------------------------------
+// Success
+// ----------------------------------------------------------
+
+.highlight span.gi {
+    color: var(--color-success);
+    font-weight: 700;
+}
+
+// ----------------------------------------------------------
+// Warning
+// ----------------------------------------------------------
+
+.highlight span.gt {
+    color: var(--color-warning);
+}
+
+// ----------------------------------------------------------
 // Errors & Diff
 // ----------------------------------------------------------
 
@@ -259,5 +274,5 @@ figure.highlight pre,
 .highlight span.gd,
 .highlight span.gr {
     color: var(--color-danger);
-    background: color-mix(in srgb, var(--color-danger) 12%, transparent);
+    font-weight: 700;
 }

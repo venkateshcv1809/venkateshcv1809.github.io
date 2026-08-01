@@ -6,6 +6,9 @@ markdown: kramdown
 kramdown:
     input: GFM
     syntax_highlighter: rouge
+    syntax_highlighter_opts:
+        block:
+            line_numbers: true
     smart_quotes: lsquo,rsquo,ldquo,rdquo
     hard_wrap: false
     auto_ids: true
@@ -20,7 +23,6 @@ collections:
     pages:
         output: true
         permalink: /:name
-        is_structural: true
 
 exclude:
     - Gemfile
