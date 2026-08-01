@@ -176,14 +176,50 @@ Français
 <details markdown="1">
 <summary>Expandable Section</summary>
 
-<div markdown="1">
 This content should be hidden until expanded.
 
 It contains **Markdown**, `inline code` and lists.
 
 - Item One
 - Item Two
-</div>
+
+</details>
+
+<details markdown="1">
+<summary>Installation</summary>
+
+Install the project dependencies.
+
+```bash
+bundle install
+```
+
+</details>
+
+<details markdown="1">
+<summary>Project Structure</summary>
+
+```
+.
+├── _config.yml
+├── _layouts/
+├── _includes/
+├── _plugins/
+├── assets/
+└── _pages/
+```
+
+</details>
+
+<details markdown="1">
+<summary>Supported Features</summary>
+
+- Task Lists
+- Footnotes
+- Definition Lists
+- Mathematics
+- Syntax Highlighting
+- Custom Markdown Plugins
 
 </details>
 
