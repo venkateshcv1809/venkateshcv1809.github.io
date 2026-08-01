@@ -18,12 +18,12 @@
         --background-secondary: #{map.get($palette, mantle)};
         --background-tertiary: #{map.get($palette, surface0)};
         --background-muted: #{map.get($palette, surface1)};
-        --background-code: #{map.get($palette, crust)};
 
         /* Text */
         --text-primary: #{map.get($palette, text)};
         --text-secondary: #{map.get($palette, subtext1)};
         --text-muted: #{map.get($palette, subtext0)};
+        --text-code: #{map.get($palette, text)};
 
         --text-link: #{map.get($palette, blue)};
         --text-link-hover: #{map.get($palette, mauve)};
@@ -42,15 +42,25 @@
         --code-background: #{map.get($palette, crust)};
         --code-inline-background: #{rgba(map.get($palette, crust), 0.9)};
 
-        --code-comment: #{map.get($palette, surface2)};
+        --code-comment: #{map.get($palette, overlay1)};
+
         --code-keyword: #{map.get($palette, mauve)};
+        --code-operator: #{map.get($palette, sky)};
+        --code-punctuation: #{map.get($palette, overlay2)};
+
         --code-string: #{map.get($palette, green)};
+        --code-number: #{map.get($palette, peach)};
+        --code-constant: #{map.get($palette, peach)};
+
         --code-function: #{map.get($palette, blue)};
-        --code-number: #{map.get($palette, yellow)};
-        --code-operator: #{map.get($palette, sapphire)};
-        --code-variable: #{map.get($palette, red)};
-        --code-punctuation: #{map.get($palette, text)};
-        --code-tag: #{map.get($palette, pink)};
+        --code-constructor: #{map.get($palette, sapphire)};
+
+        --code-variable: #{map.get($palette, text)};
+        --code-parameter: #{map.get($palette, maroon)};
+        --code-field: #{map.get($palette, teal)};
+
+        --code-type: #{map.get($palette, yellow)};
+        --code-tag: #{map.get($palette,mauve)};
 
         /* Semantic */
         --color-info: #{map.get($palette, sky)};
@@ -103,6 +113,7 @@
          * BORDER RADIUS
          * ========================================================== */
 
+        --radius-xs: 2px;
         --radius-sm: 4px;
         --radius-md: 8px;
         --radius-lg: 12px;
