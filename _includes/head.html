@@ -1,73 +1,57 @@
 <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>
+    <title>
         {%- if page.title -%}
-            {{ page.title }} | {{ metadata.title }}
+        {{ page.title }} | {{ metadata.title }}
         {%- else -%}
-            {{ metadata.title }}
+        {{ metadata.title }}
         {%- endif -%}
-  </title>
+    </title>
 
-  <meta
-    name="description"
-    content="{{ page.description | default: metadata.description | escape }}"
-  />
+    <meta name="description" content="{{ page.description | default: metadata.description | escape }}" />
 
-  <meta name="author" content="{{ metadata.author.name }}" />
+    <meta name="author" content="{{ metadata.author.name }}" />
 
-  <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="light dark" />
 
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
-  />
-  <script
-    defer
-    src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"
-  ></script>
-  <script
-    defer
-    src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
-    onload="renderMathInElement(document.body)"
-  ></script>
+    <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.1/dist/katex.min.css"
+        integrity="sha384-1vdNCNel6Tx/NQa8IR1mGOGKsbGreCkOPfbtPPnUURJ5Tu2PRVfQ/7KLZC+Pi1p1" crossorigin="anonymous">
 
-  <link
-    rel="apple-touch-icon"
-    sizes="180x180"
-    href="{{ '/assets/favicon/apple-touch-icon.png' | relative_url }}"
-  />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.1/dist/katex.min.js"
+        integrity="sha384-ycJ6GAwiS15LoUPipwJOrWTvkUHl/YqELValBwI5I4awP1EeEQJYarj+w85ntcz7"
+        crossorigin="anonymous"></script>
 
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="32x32"
-    href="{{ '/assets/favicon/favicon-32x32.png' | relative_url }}"
-  />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.1/dist/contrib/auto-render.min.js"
+        integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
 
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="16x16"
-    href="{{ '/assets/favicon/favicon-16x16.png' | relative_url }}"
-  />
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true }
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
 
-  <link
-    rel="manifest"
-    href="{{ '/assets/favicon/site.webmanifest' | relative_url }}"
-  />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicon/apple-touch-icon.png' | relative_url }}" />
 
-  <link
-    rel="stylesheet"
-    href="{{ '/assets/css/light.css' | relative_url }}"
-    media="(prefers-color-scheme: light)"
-  />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon/favicon-32x32.png' | relative_url }}" />
 
-  <link
-    rel="stylesheet"
-    href="{{ '/assets/css/dark.css' | relative_url }}"
-    media="(prefers-color-scheme: dark)"
-  />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon/favicon-16x16.png' | relative_url }}" />
+
+    <link rel="manifest" href="{{ '/assets/favicon/site.webmanifest' | relative_url }}" />
+
+    <link rel="stylesheet" href="{{ '/assets/css/light.css' | relative_url }}" media="(prefers-color-scheme: light)" />
+
+    <link rel="stylesheet" href="{{ '/assets/css/dark.css' | relative_url }}" media="(prefers-color-scheme: dark)" />
 </head>
