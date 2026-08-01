@@ -8,7 +8,6 @@
 // ----------------------------------------------------------
 
 :is(h1, h2, h3, h4, h5, h6) {
-    color: var(--text-primary);
     font-weight: 700;
     line-height: var(--line-height-heading);
     margin-bottom: var(--space-4);
@@ -35,18 +34,14 @@ $heading-scale: (
 // ----------------------------------------------------------
 
 p {
-    color: var(--text-primary);
-    line-height: var(--line-height-body);
     margin-bottom: var(--space-5);
 }
 
 strong {
-    color: var(--text-primary);
     font-weight: 700;
 }
 
 em {
-    color: inherit;
     font-style: italic;
 }
 
@@ -77,8 +72,8 @@ s {
 }
 
 mark {
-    color: var(--color-warning);
-    background: color-mix(in srgb, var(--color-warning) 20%, transparent);
+    color: inherit;
+    background: color-mix(in srgb, var(--color-warning) 25%, transparent);
     padding: 0.125em 0.25em;
     border-radius: var(--radius-sm);
 }
@@ -102,7 +97,8 @@ kbd {
     background: var(--background-tertiary);
 
     border: 1px solid var(--border-strong);
-    border-bottom-width: 3px;
+    border-bottom-width: 5px;
+    border-right-width: 3px;
     border-radius: var(--radius-sm);
 
     padding: var(--space-1) var(--space-2);
