@@ -10,18 +10,15 @@ html {
 }
 
 body {
-    margin: 0;
-
     background-color: var(--background-primary);
     color: var(--text-primary);
-
     font-family: var(--font-mono);
     font-size: var(--fs-base);
     line-height: var(--line-height-body);
-
+    margin: 0;
     text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
 }
 
 img,
@@ -52,5 +49,5 @@ a {
 }
 
 :target {
-    scroll-margin-top: var(--space-6);
+    scroll-margin-top: var(--space-8);
 }
