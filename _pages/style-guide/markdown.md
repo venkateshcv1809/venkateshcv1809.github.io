@@ -151,6 +151,76 @@ Jump to the [Configuration](#configuration) section.
 
 ---
 
+## Symbols
+
+### Common Symbols
+
+| Symbol | Markdown / HTML |
+|--------|------------------|
+| © | `&copy;` |
+| ® | `&reg;` |
+| ™ | `&trade;` |
+| € | `&euro;` |
+| £ | `&pound;` |
+| ¥ | `&yen;` |
+| § | `&sect;` |
+| ¶ | `&para;` |
+| ° | `&#176;` |
+| • | `&bull;` |
+| … | `&hellip;` |
+| — | `&mdash;` |
+| – | `&ndash;` |
+
+---
+
+### Arrows
+
+| Symbol | HTML |
+|--------|------|
+| ← | `&larr;` |
+| ↑ | `&uarr;` |
+| → | `&rarr;` |
+| ↓ | `&darr;` |
+| ↔ | `&harr;` |
+| ⇒ | `&rArr;` |
+| ⇐ | `&lArr;` |
+| ⇔ | `&hArr;` |
+
+---
+
+### Mathematics
+
+| Symbol | HTML |
+|--------|------|
+| ± | `&plusmn;` |
+| × | `&times;` |
+| ÷ | `&divide;` |
+| ≈ | `&asymp;` |
+| ≠ | `&ne;` |
+| ≤ | `&le;` |
+| ≥ | `&ge;` |
+| ∞ | `&infin;` |
+| √ | `&radic;` |
+| π | `&#960;` |
+
+---
+
+### Greek Letters
+
+| Symbol | HTML |
+|--------|------|
+| α | `&alpha;` |
+| β | `&beta;` |
+| γ | `&gamma;` |
+| δ | `&delta;` |
+| θ | `&theta;` |
+| λ | `&lambda;` |
+| μ | `&mu;` |
+| σ | `&sigma;` |
+| Ω | `&Omega;` |
+
+---
+
 ## Emoji
 
 😀 🚀 🔥 💻 📚 ☕

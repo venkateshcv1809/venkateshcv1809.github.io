@@ -51,3 +51,8 @@ a {
 :target {
     scroll-margin-top: var(--space-8);
 }
+
+::selection {
+    background: var(--selection-background);
+    color: var(--text-primary);
+}
