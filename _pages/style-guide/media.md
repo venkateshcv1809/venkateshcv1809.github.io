@@ -6,122 +6,96 @@ permalink: /style-guide/media/
 
 # Media
 
-This page validates image rendering, responsive behaviour, captions, SVG rendering, transparency, animation and embedded media.
+This page demonstrates how images, figures and embedded media are rendered.
 
 ---
 
 ## Standard Image
 
-![Landscape](/assets/images/landscape.webp)
+![Landscape](/assets/images/demo/800x450.jpg)
 
 ---
 
 ## Linked Image
 
-[![Landscape Thumbnail](/assets/images/landscape.webp)](/assets/images/landscape.webp)
+[![Landscape](/assets/images/demo/800x450.jpg)](/assets/images/demo/800x450.jpg)
 
 ---
 
 ## Figure with Caption
 
 <figure>
-
-![Architecture Diagram](/assets/images/architecture.svg)
-
-<figcaption>
-
-Project architecture overview.
-
-</figcaption>
-
+    <img
+        src="/assets/images/demo/800x450.jpg"
+        alt="Landscape image">
+    <figcaption>
+        Landscape image with caption.
+    </figcaption>
 </figure>
-
----
-
-## SVG
-
-![SVG Logo](/assets/images/logo.svg)
-
----
-
-## Transparent PNG
-
-![Transparent Image](/assets/images/transparent.png)
-
----
-
-## Animated WebP
-
-![Animated Emoji](/assets/emoji/noto-emoji/rocket.webp)
 
 ---
 
 ## Small Image
 
-![Avatar](/assets/images/avatar.webp)
+![Portrait](/assets/images/demo/300x600.jpg)
 
 ---
 
-## Large Image
+## Square Image
 
-![Wide Banner](/assets/images/banner.webp)
+![Square](/assets/images/demo/400x400.jpg)
 
 ---
 
-## Tall Image
+## Large Square Image
 
-![Portrait](/assets/images/portrait.webp)
+![Large Square](/assets/images/demo/600x600.jpg)
 
 ---
 
 ## Image Gallery
 
-| Image | Description |
-|-------|-------------|
-| ![](/assets/images/avatar.webp) | Small thumbnail |
-| ![](/assets/images/logo.svg) | SVG |
-| ![](/assets/emoji/noto-emoji/rocket.webp) | Animated WebP |
+| Preview | Description |
+|---------|-------------|
+| ![](/assets/images/demo/300x600.jpg) | Portrait |
+| ![](/assets/images/demo/400x400.jpg) | Square |
+| ![](/assets/images/demo/600x600.jpg) | Large Square |
+| ![](/assets/images/demo/800x450.jpg) | Landscape |
 
 ---
 
 ## Responsive Behaviour
 
-Resize the browser window to verify image scaling, spacing and overflow behaviour.
+Resize the browser window to verify image scaling, spacing and horizontal overflow.
 
 ---
 
 ## Image Inside Blockquote
 
-> ![Architecture](/assets/images/architecture.svg)
+> ![Landscape](/assets/images/demo/800x450.jpg)
 
 ---
 
 ## HTML Picture Element
 
 <picture>
-
-<source
-    srcset="/assets/images/landscape.webp"
-    type="image/webp">
-
-<img
-    src="/assets/images/landscape.png"
-    alt="Landscape">
-
+    <source
+        srcset="/assets/images/demo/800x450.jpg"
+        type="image/jpeg">
+    <img
+        src="/assets/images/demo/800x450.jpg"
+        alt="Landscape image">
 </picture>
 
 ---
 
 ## HTML Video
 
-<video
-    controls
-    width="100%">
-
+<video controls width="100%">
     <source
-        src="/assets/media/sample.mp4"
+        src="/assets/images/demo/sample.mp4"
         type="video/mp4">
-
+    Your browser does not support the video element.
 </video>
 
 ---
@@ -129,11 +103,10 @@ Resize the browser window to verify image scaling, spacing and overflow behaviou
 ## HTML Audio
 
 <audio controls>
-
     <source
-        src="/assets/media/sample.mp3"
+        src="/assets/images/demo/sample.mp3"
         type="audio/mpeg">
-
+    Your browser does not support the audio element.
 </audio>
 
 ---

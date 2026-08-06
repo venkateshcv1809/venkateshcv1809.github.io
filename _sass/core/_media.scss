@@ -1,20 +1,11 @@
-// ==========================================================
-// Images & Figures
-// Styling for Markdown-generated images and HTML figures.
-// ==========================================================
-
-img {
-    display: block;
-
-    max-width: 100%;
-    height: auto;
-
-    margin: var(--space-5) auto;
-
+main img {
+    background: var(--background-secondary);
     border: 1px solid var(--border-default);
     border-radius: var(--radius-md);
-
-    background: var(--background-secondary);
+    display: block;
+    height: auto;
+    margin: var(--space-5) auto;
+    max-width: 100%;
 }
 
 a img {
@@ -30,9 +21,7 @@ a:focus-visible img {
 }
 
 figure {
-    margin: var(--space-6) 0;
-
-    text-align: center;
+    margin: var(--space-5) 0;
 }
 
 figure img {
@@ -40,19 +29,17 @@ figure img {
 }
 
 figcaption {
-    margin-top: var(--space-3);
-
     color: var(--text-muted);
-
     font-size: var(--fs-sm);
     line-height: var(--line-height-body);
+    margin: var(--space-3) auto 0;
+    max-width: 70ch;
+    text-align: center;
 }
 
-svg {
+main svg {
     display: block;
-
-    max-width: 100%;
     height: auto;
-
     margin: var(--space-5) auto;
+    max-width: 100%;
 }
