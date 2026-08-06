@@ -7,7 +7,7 @@ module Jekyll
       EMOJI_ROOT = 'assets/emoji'
       EMOJI_PATTERN = /:emoji-([a-zA-Z0-9_-]+):/
 
-      def self.pre_render(content, site)
+      def self.post_render(content, site)
         content.gsub(EMOJI_PATTERN) do
           name = Regexp.last_match(1)
 

@@ -7,7 +7,7 @@ module Jekyll
       ICON_ROOT = 'assets/icons'
       ICON_PATTERN = /:icon-([a-zA-Z0-9_-]+):/
 
-      def self.pre_render(content, site)
+      def self.post_render(content, site)
         content.gsub(ICON_PATTERN) do
           name = Regexp.last_match(1)
 
@@ -31,7 +31,8 @@ module Jekyll
             '<svg',
             %(<svg class="icon icon-#{name}")
           )
-
+          svg.gsub!(/\s*\n\s*/, ' ')
+          svg.strip!
           svg
         end
       end

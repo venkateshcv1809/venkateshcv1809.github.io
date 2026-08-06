@@ -4,15 +4,11 @@ module Jekyll
   module Tokenizer
     TOKEN_PREFIX = '__TOKEN__'
 
-    PATTERNS = [
-      /```[\s\S]*?```/
-    ].freeze
-
-    def self.protect(content)
+    def self.protect(content, patterns)
       tokens = {}
       index = 0
 
-      PATTERNS.each do |pattern|
+      patterns.each do |pattern|
         content = content.gsub(pattern) do |match|
           token = "#{TOKEN_PREFIX}#{index}__"
 

@@ -8,179 +8,98 @@ permalink: /style-guide/plugins/
 
 This page demonstrates the custom Markdown extensions supported by the portfolio.
 
----
-
-## Philosophy
-
-These plugins extend Markdown while keeping the authoring experience simple.
-
-They are processed before Markdown is rendered and therefore work naturally inside headings, paragraphs, lists, tables and blockquotes.
+These plugins extend standard Markdown while preserving a natural writing experience.
 
 ---
 
 # Emoji
 
-## Basic
-
-Markdown
-
-```text
-:emoji-smile:
-```
-
-Output
-
-:emoji-smile:
-
----
-
 ## Inline
 
-Markdown
-
-```text
-Building :emoji-fire: engineering systems.
-```
-
-Output
-
-Building :emoji-fire: engineering systems.
+Building :emoji-fire: engineering systems with :emoji-sparkles: attention to detail.
 
 ---
 
-## Heading
+## Headings
 
-Markdown
+## :emoji-check-mark: Markdown First
 
-```text
-# :emoji-sparkles: Sentinel Genesis
-```
+## :emoji-fire: Performance
 
-Output
-
-# :emoji-sparkles: Sentinel Genesis
+## :emoji-sparkles: Developer Experience
 
 ---
 
 ## Lists
 
-Markdown
-
-```text
 - :emoji-check-mark: Markdown First
 - :emoji-fire: Developer Focused
 - :emoji-sparkles: Fast
-```
+- :emoji-smile: Pleasant to use
 
-Output
+---
 
-- :emoji-check-mark: Markdown First
-- :emoji-fire: Developer Focused
-- :emoji-sparkles: Fast
+## Paragraph
+
+Documentation should be enjoyable to read :emoji-smile:, expressive :emoji-sparkles:, and focused on performance :emoji-fire:.
 
 ---
 
 # Icons
 
-## Basic
-
-Markdown
-
-```text
-:icon-github:
-```
-
-Output
-
-:icon-github:
-
----
-
 ## Inline
 
-Markdown
+:icon-github: GitHub Repository
 
-```text
-:icon-github: Repository
-```
+:icon-terminal: Terminal Workflow
 
-Output
+:icon-code-slash: Source Code
 
-:icon-github: Repository
+:icon-file-earmark-code: Documentation
 
 ---
 
-## Heading
+## Headings
 
-Markdown
+## :icon-terminal: Terminal IDE
 
-```text
-# :icon-terminal: Terminal IDE
-```
+## :icon-cpu: Embedded Systems
 
-Output
-
-# :icon-terminal: Terminal IDE
+## :icon-rocket: Sentinel Genesis
 
 ---
 
 ## Lists
 
-Markdown
-
-```text
 - :icon-github: GitHub
+- :icon-git: Git
 - :icon-terminal: Terminal
 - :icon-code-slash: Source Code
 - :icon-file-earmark-code: Documentation
-```
-
-Output
-
-- :icon-github: GitHub
-- :icon-terminal: Terminal
-- :icon-code-slash: Source Code
-- :icon-file-earmark-code: Documentation
+- :icon-cpu: Hardware
+- :icon-rocket: Projects
 
 ---
 
 ## Multiple Icons
 
-Markdown
-
-```text
 :icon-github:
 :icon-git:
 :icon-terminal:
 :icon-cpu:
 :icon-code-slash:
-```
-
-Output
-
-:icon-github:
-:icon-git:
-:icon-terminal:
-:icon-cpu:
-:icon-code-slash:
+:icon-file-earmark-code:
+:icon-rocket:
 
 ---
 
-# Mixed
+# Mixed Content
 
-Markdown
+## :icon-rocket: Sentinel Genesis
 
-```text
-# :icon-rocket: Sentinel Genesis
+An autonomous SDLC powered by local AI :emoji-fire:.
 
-An autonomous SDLC powered by local AI :emoji-smile:
-```
-
-Output
-
-# :icon-rocket: Sentinel Genesis
-
-An autonomous SDLC powered by local AI :emoji-smile:
+Designed for developers who enjoy building in the terminal :icon-terminal: while keeping documentation first :emoji-check-mark:.
 
 ---
 
@@ -191,6 +110,7 @@ An autonomous SDLC powered by local AI :emoji-smile:
 | Emoji | :emoji-smile: |
 | Icon | :icon-github: |
 | Mixed | :icon-terminal: :emoji-fire: |
+| Project | :icon-rocket: Sentinel Genesis |
 
 ---
 
@@ -200,20 +120,37 @@ An autonomous SDLC powered by local AI :emoji-smile:
 
 > :icon-terminal: Documentation first.
 
----
-
-# Paragraph
-
-The portfolio extends Markdown only where native Markdown lacks functionality. Animated emojis such as :emoji-smile:, :emoji-fire:, and :emoji-sparkles: improve readability, while inline SVG icons like :icon-github:, :icon-terminal:, :icon-code-slash:, and :icon-file-earmark-code: integrate naturally into technical documentation.
+> :icon-github: Version everything.
 
 ---
 
 # Protected Code
 
-Markdown
+The tokenizer should prevent plugin expansion inside fenced code blocks.
 
-````text
+```
 :emoji-fire:
+:emoji-smile:
 :icon-github:
+:icon-terminal:
 H~2~O
 x^2^
+```
+
+Inline code should also remain untouched: `:emoji-fire:` `:icon-github:` `x^2^`
+
+---
+
+# HTML
+
+Plugins should continue to work inside raw HTML.
+
+<div>
+
+:icon-rocket: Launch
+
+:emoji-sparkles: Ready
+
+</div>
+
+---

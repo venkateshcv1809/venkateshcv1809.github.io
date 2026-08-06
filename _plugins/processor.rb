@@ -24,6 +24,14 @@ end
 
 module Jekyll
   module Processor
+    MARKDOWN_PATTERNS = [
+      /```[\s\S]*?```/
+    ].freeze
+
+    HTML_PATTERNS = [
+      %r{<pre\b[^>]*>.*?</pre>}mi,
+      %r{<code\b[^>]*>.*?</code>}mi
+    ].freeze
     PROCESSORS = []
 
     ProcessorConfig::PLUGIN_CATEGORIES.each do |category|
@@ -47,7 +55,20 @@ module Jekyll
     PROCESSORS.freeze
 
     def self.run(event, content, site)
-      content, tokens = Tokenizer.protect(content)
+      patterns =
+        case event
+        when :pre_render
+          MARKDOWN_PATTERNS
+        when :post_render
+          HTML_PATTERNS
+        else
+          []
+        end
+
+      content, tokens = Tokenizer.protect(
+        content,
+        patterns
+      )
       PROCESSORS.each do |processor|
         next unless processor.respond_to?(event)
 
