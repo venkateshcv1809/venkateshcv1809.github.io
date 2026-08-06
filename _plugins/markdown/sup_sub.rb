@@ -1,26 +1,23 @@
+# frozen_string_literal: true
+
 module Jekyll
-    module Markdown
-        module SupSub
+  module Markdown
+    module SupSub
+      PLUGIN = true
+      SUPERSCRIPT = /\^([^^\s]+)\^/
+      SUBSCRIPT   = /(?<!~)~([^~\s]+)~(?!~)/
 
-            SUPERSCRIPT = /\^([^^\s]+)\^/.freeze
-            SUBSCRIPT   = /(?<!~)~([^~\s]+)~(?!~)/.freeze
+      def self.pre_render(content, _site)
+        content = content.gsub(
+          SUPERSCRIPT,
+          '<sup>\\1</sup>'
+        )
 
-            def self.process(content, _site)
-
-                content = content.gsub(
-                    SUPERSCRIPT,
-                    "<sup>\\1</sup>"
-                )
-
-                content = content.gsub(
-                    SUBSCRIPT,
-                    "<sub>\\1</sub>"
-                )
-
-                content
-
-            end
-
-        end
+        content.gsub(
+          SUBSCRIPT,
+          '<sub>\\1</sub>'
+        )
+      end
     end
+  end
 end

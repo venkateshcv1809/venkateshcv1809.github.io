@@ -1,48 +1,38 @@
+# frozen_string_literal: true
+
 module Jekyll
+  module Tokenizer
+    TOKEN_PREFIX = '__TOKEN__'
 
-    module Tokenizer
+    PATTERNS = [
+      /```[\s\S]*?```/
+    ].freeze
 
-        TOKEN_PREFIX = "__TOKEN__".freeze
+    def self.protect(content)
+      tokens = {}
+      index = 0
 
-        PATTERNS = [
-            /```[\s\S]*?```/
-        ].freeze
+      PATTERNS.each do |pattern|
+        content = content.gsub(pattern) do |match|
+          token = "#{TOKEN_PREFIX}#{index}__"
 
-        def self.protect(content)
+          tokens[token] = match
 
-            tokens = {}
-            index = 0
+          index += 1
 
-            PATTERNS.each do |pattern|
-
-                content = content.gsub(pattern) do |match|
-
-                    token = "#{TOKEN_PREFIX}#{index}__"
-
-                    tokens[token] = match
-
-                    index += 1
-
-                    token
-
-                end
-
-            end
-
-            [content, tokens]
-
+          token
         end
+      end
 
-        def self.restore(content, tokens)
-
-            tokens.each do |token, value|
-                content.gsub!(token, value)
-            end
-
-            content
-
-        end
-
+      [content, tokens]
     end
 
+    def self.restore(content, tokens)
+      tokens.each do |token, value|
+        content.gsub!(token, value)
+      end
+
+      content
+    end
+  end
 end

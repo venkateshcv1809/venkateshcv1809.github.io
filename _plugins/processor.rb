@@ -1,92 +1,89 @@
-require_relative "tokenizer"
+# frozen_string_literal: true
+
+require_relative 'tokenizer'
 
 module Jekyll
-
-    module ProcessorConfig
-
-        PLUGIN_CATEGORIES = [
-            "markdown",
-        ].freeze
-
-    end
-
+  module ProcessorConfig
+    PLUGIN_CATEGORIES = %w[
+      markdown
+      html
+    ].freeze
+  end
 end
 
 Jekyll::ProcessorConfig::PLUGIN_CATEGORIES.each do |category|
-
-    Dir.glob(
-        File.join(__dir__, category, "*.rb")
+  Dir.glob(
+    File.join(__dir__, category, '*.rb')
+  ).each do |file|
+    require_relative File.join(
+      category,
+      File.basename(file, '.rb')
     )
-    .sort
-    .each do |file|
-
-        require_relative File.join(
-            category,
-            File.basename(file, ".rb")
-        )
-
-    end
-
+  end
 end
 
 module Jekyll
+  module Processor
+    PROCESSORS = []
 
-    module Processor
+    ProcessorConfig::PLUGIN_CATEGORIES.each do |category|
+      namespace = Jekyll.const_get(
+        category.split('_')
+                  .map(&:capitalize)
+                  .join
+      )
 
-        PROCESSORS = []
+      namespace.constants.sort.each do |constant|
+        mod = namespace.const_get(constant)
 
-        ProcessorConfig::PLUGIN_CATEGORIES.each do |category|
+        next unless mod.is_a?(Module)
+        next unless mod.const_defined?(:PLUGIN, false)
+        next unless mod::PLUGIN
 
-            namespace = Jekyll.const_get(
-                category.split("_")
-                        .map(&:capitalize)
-                        .join
-            )
-
-            namespace.constants.sort.each do |constant|
-
-                mod = namespace.const_get(constant)
-
-                PROCESSORS << mod if mod.respond_to?(:process)
-
-            end
-
-        end
-
-        PROCESSORS.freeze
-
-        def self.process(content, site)
-
-            content, tokens = Tokenizer.protect(content)
-
-            PROCESSORS.each do |processor|
-
-                content = processor.process(
-                    content,
-                    site
-                )
-
-            end
-
-            Tokenizer.restore(
-                content,
-                tokens
-            )
-
-        end
-
+        PROCESSORS << mod
+      end
     end
 
+    PROCESSORS.freeze
+
+    def self.run(event, content, site)
+      content, tokens = Tokenizer.protect(content)
+      PROCESSORS.each do |processor|
+        next unless processor.respond_to?(event)
+
+        content = processor.public_send(
+          event,
+          content,
+          site
+        )
+      end
+
+      Tokenizer.restore(
+        content,
+        tokens
+      )
+    end
+  end
 end
 
 Jekyll::Hooks.register(
-    [:pages, :documents],
-    :pre_render
+  %i[pages documents],
+  :pre_render
 ) do |item|
+  item.content = Jekyll::Processor.run(
+    :pre_render,
+    item.content,
+    item.site
+  )
+end
 
-    item.content = Jekyll::Processor.process(
-        item.content,
-        item.site
-    )
-
+Jekyll::Hooks.register(
+  %i[pages documents],
+  :post_render
+) do |item|
+  item.output = Jekyll::Processor.run(
+    :post_render,
+    item.output,
+    item.site
+  )
 end

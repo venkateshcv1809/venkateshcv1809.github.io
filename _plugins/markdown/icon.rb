@@ -1,44 +1,40 @@
+# frozen_string_literal: true
+
 module Jekyll
-    module Markdown
-        module Icon
+  module Markdown
+    module Icon
+      PLUGIN = true
+      ICON_ROOT = 'assets/icons'
+      ICON_PATTERN = /:icon-([a-zA-Z0-9_-]+):/
 
-            ICON_ROOT = "assets/icons".freeze
+      def self.pre_render(content, site)
+        content.gsub(ICON_PATTERN) do
+          name = Regexp.last_match(1)
 
-            ICON_PATTERN = /:icon-([a-zA-Z0-9_-]+):/.freeze
+          file = Dir.glob(
+            File.join(
+              site.source,
+              ICON_ROOT,
+              '**',
+              "#{name}.svg"
+            )
+          ).first
 
-            def self.process(content, site)
+          unless file
+            warn "Icon '#{name}' not found."
+            next ":icon-#{name}:"
+          end
 
-                content.gsub(ICON_PATTERN) do
+          svg = File.read(file)
 
-                    name = Regexp.last_match(1)
+          svg.sub!(
+            '<svg',
+            %(<svg class="icon icon-#{name}")
+          )
 
-                    file = Dir.glob(
-                        File.join(
-                            site.source,
-                            ICON_ROOT,
-                            "**",
-                            "#{name}.svg"
-                        )
-                    ).first
-
-                    unless file
-                        warn "Icon '#{name}' not found."
-                        next ":icon-#{name}:"
-                    end
-
-                    svg = File.read(file)
-
-                    svg.sub!(
-                        "<svg",
-                        %(<svg class="icon icon-#{name}")
-                    )
-
-                    svg
-
-                end
-
-            end
-
+          svg
         end
+      end
     end
+  end
 end
