@@ -4,15 +4,15 @@ title: Theme Showcase
 permalink: /style-guide/
 ---
 
-# Theme Showcase
+# Style Guide
 
-This section demonstrates every component supported by the portfolio theme.
+This section documents every feature supported by the portfolio.
 
-The purpose is to verify consistency, spacing, typography, syntax highlighting and responsive behaviour before publishing articles.
+Its primary purpose is to verify rendering, spacing, typography, syntax highlighting, media, plugins and responsive behaviour before publishing articles.
 
 ---
 
-## Sections
+## Contents
 
 - [Typography](typography/)
 - [Markdown](markdown/)
@@ -20,22 +20,32 @@ The purpose is to verify consistency, spacing, typography, syntax highlighting a
 - [Mathematics](mathematics/)
 - [Tables](tables/)
 - [Media](media/)
-- [Components](components/)
 - [Plugins](plugins/)
 - [Example Article](article/)
 - [Playground](playground/)
 
 ---
 
-## Design Goals
+## Design Principles
 
 - Markdown first
 - Developer focused
 - Terminal inspired
-- Catppuccin Mocha & Latte
+- Catppuccin Latte & Mocha
 - Accessible
 - Responsive
 - Minimal
 - Content over decoration
+
+---
+
+## Purpose
+
+The style guide serves as:
+
+- Documentation for supported Markdown features.
+- Reference for reusable utilities and plugins.
+- Regression suite for visual changes.
+- Sandbox for testing new additions before they are used in articles.
 
 ---
