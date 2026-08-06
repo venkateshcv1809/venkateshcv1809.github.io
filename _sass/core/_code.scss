@@ -49,6 +49,11 @@ code.highlighter-rouge {
 // Rouge Table Layout
 // ----------------------------------------------------------
 
+code > .table-wrapper {
+    margin: 0;
+    overflow: visible;
+}
+
 .rouge-table {
     background: inherit;
     border: 0;
