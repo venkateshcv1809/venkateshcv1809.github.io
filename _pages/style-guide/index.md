@@ -21,8 +21,6 @@ Its primary purpose is to verify rendering, spacing, typography, syntax highligh
 - [Tables](tables/)
 - [Media](media/)
 - [Plugins](plugins/)
-- [Example Article](article/)
-- [Playground](playground/)
 
 ---
 
@@ -46,6 +44,5 @@ The style guide serves as:
 - Documentation for supported Markdown features.
 - Reference for reusable utilities and plugins.
 - Regression suite for visual changes.
-- Sandbox for testing new additions before they are used in articles.
 
 ---
