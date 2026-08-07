@@ -1,3 +1,7 @@
+// ==========================================================
+// Reset
+// ==========================================================
+
 *,
 *::before,
 *::after {
@@ -10,7 +14,7 @@ html {
 }
 
 body {
-    background-color: var(--background-primary);
+    background: var(--background-primary);
     color: var(--text-primary);
     font-family: var(--font-mono);
     font-size: var(--fs-base);
@@ -27,6 +31,7 @@ svg,
 video,
 canvas {
     display: block;
+    height: auto;
     max-width: 100%;
 }
 
@@ -42,10 +47,12 @@ button {
     background: none;
     border: 0;
     cursor: pointer;
+    padding: 0;
 }
 
 a {
     color: inherit;
+    text-decoration: none;
 }
 
 :target {

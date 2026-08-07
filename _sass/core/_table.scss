@@ -9,9 +9,8 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     color: var(--text-primary);
-    min-width: 100%;
     white-space: nowrap;
-    width: max-content;
+    width: 100%;
 }
 
 thead {
@@ -21,7 +20,6 @@ thead {
 th,
 td {
     border-bottom: 1px solid var(--border-default);
-    min-width: max-content;
     padding: var(--space-3) var(--space-4);
     text-align: left;
     vertical-align: top;
