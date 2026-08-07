@@ -146,11 +146,3 @@
         --transition-curve: cubic-bezier(0.4, 0, 0.2, 1);
     }
 }
-
-/* ================================================================
- * Compile-time Sass Constants
- * ================================================================ */
-
-$mobile-breakpoint: 768px;
-$container-max-width: 800px;
-$container-padding: 1.5rem;
