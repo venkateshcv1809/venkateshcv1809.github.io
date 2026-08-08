@@ -3,6 +3,10 @@ header:
     url: /
     icon: home
 
-  - title: style-guide
-    url: /style-guide/
+  - title: Projects
+    url: /projects/
     icon: palette
+
+  - title: Posts
+    url: /posts/
+    icon: file-text
