@@ -1,8 +1,12 @@
 default: serve
 
-# Start local development server with live reload
+# Start server
 serve:
-	bundle exec jekyll serve --livereload
+	bundle exec jekyll serve
+
+# Start local development server with live reload
+dev:
+	bundle exec jekyll serve --livereload --host 0.0.0.0
 
 # Build development site
 build:
