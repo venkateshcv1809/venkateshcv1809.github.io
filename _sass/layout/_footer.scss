@@ -3,74 +3,49 @@
 // ==========================================================
 
 .statusline {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: var(--space-4);
-
-    min-height: 2.75rem;
-
-    padding: 0 var(--space-4);
-
     background: var(--background-secondary);
     border-top: 1px solid var(--border-default);
-
-    font-size: var(--fs-sm);
-}
-
-.statusline-left,
-.statusline-right {
     display: flex;
-    align-items: center;
-    gap: var(--space-2);
-}
-
-.statusline-right {
-    margin-left: auto;
+    font-size: var(--fs-sm);
+    gap: var(--space-4);
+    justify-content: space-between;
+    min-height: 2.75rem;
+    padding: 0 var(--space-4);
 }
 
 .segment {
-    display: inline-flex;
     align-items: center;
-    gap: var(--space-2);
-
-    min-height: 2rem;
-    padding: 0 var(--space-3);
-
-    color: var(--text-secondary);
-
     background: var(--background-primary);
-
     border: 1px solid var(--border-default);
     border-radius: var(--radius-md);
-
-    white-space: nowrap;
-
+    color: var(--text-secondary);
+    display: inline-flex;
+    gap: var(--space-2);
+    min-height: var(--space-6);
+    padding: 0 var(--space-3);
     transition:
         color var(--transition-fast) var(--transition-curve),
         border-color var(--transition-fast) var(--transition-curve),
         background var(--transition-fast) var(--transition-curve);
+    white-space: nowrap;
 }
 
-.segment--icon {
-    justify-content: center;
-
-    width: 2rem;
-    padding: 0;
-
-    text-decoration: none;
-
+.segment-icon {
     color: var(--text-secondary);
+    justify-content: center;
+    padding: 0;
+    text-decoration: none;
+    width: var(--space-6);
 }
 
-.segment--icon:hover {
-    color: var(--text-primary);
-
+.segment-icon:hover {
     background: var(--background-tertiary);
     border-color: var(--border-strong);
+    color: var(--text-primary);
 }
 
-.segment--icon svg {
-    width: 1rem;
-    height: 1rem;
+.segment-icon svg {
+    height: var(--space-4);
+    width: var(--space-4);
 }
