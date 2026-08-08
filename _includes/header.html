@@ -1,41 +1,23 @@
 <header class="tmux-status">
-
-    <nav class="tmux-status-nav">
+    <nav class="tmux-status-nav" aria-label="Primary navigation">
 
         <div class="tmux-status-windows">
-
             {% for item in navigation.header %}
-
                 <a
                     href="{{ item.url | relative_url }}"
                     class="tmux-window{% if page.url == item.url %} is-active{% endif %}"
+                    {% if page.url == item.url %}aria-current="page"{% endif %}
                 >
-
                     <span class="tmux-window-icon">
+                        :icon-{{ item.icon }}:
                     </span>
 
                     <span class="tmux-window-title">
-
                         {{ item.title }}
-
-                        {% if page.url == item.url %}
-                            <span class="tmux-window-active">
-                                {% include icon.html name=site.data.site.icons.window.active %}
-                            </span>
-                        {% endif %}
-
                     </span>
-
                 </a>
-
             {% endfor %}
-
-        </div>
-
-        <div class="tmux-status-breadcrumb">
-            {{ page.title }}
         </div>
 
     </nav>
-
 </header>
