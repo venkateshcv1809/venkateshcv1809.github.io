@@ -1,10 +1,14 @@
 <footer class="statusline">
-    <span class="segment">
-        &copy; {{ "now" | date: "%Y" }} {{ metadata.author.name }}
-    </span>
+    <div class="statusline-left">
+        <span class="segment">
+            &copy; {{ "now" | date: "%Y" }} {{ metadata.author.name }}
+        </span>
+    </div>
 
-    <a class="segment segment-icon" href="{{ metadata.repository.url }}" target="_blank" rel="noopener noreferrer"
-        aria-label="View portfolio source code">
-        :icon-github:
-    </a>
+    <div class="statusline-right">
+        <a class="segment segment-icon" href="{{ metadata.repository.url }}" target="_blank" rel="noopener noreferrer"
+            aria-label="View source code">
+            :icon-github:
+        </a>
+    </div>
 </footer>

@@ -1,3 +1,5 @@
+@use "../core/_breakpoints" as *;
+
 // ==========================================================
 // Status Line
 // ==========================================================
@@ -8,15 +10,17 @@
     border-top: 1px solid var(--border-default);
     display: flex;
     font-size: var(--fs-sm);
-    gap: var(--space-4);
     justify-content: space-between;
     min-height: 2.75rem;
     padding: 0 var(--space-4);
 }
 
+// ----------------------------------------------------------
+// Footer Segments
+// ----------------------------------------------------------
+
 .segment {
     align-items: center;
-    background: var(--background-primary);
     border: 1px solid var(--border-default);
     border-radius: var(--radius-md);
     color: var(--text-secondary);
@@ -24,28 +28,48 @@
     gap: var(--space-2);
     min-height: var(--space-6);
     padding: 0 var(--space-3);
-    transition:
-        color var(--transition-fast) var(--transition-curve),
-        border-color var(--transition-fast) var(--transition-curve),
-        background var(--transition-fast) var(--transition-curve);
     white-space: nowrap;
 }
+
+// ----------------------------------------------------------
+// Source Repository
+// ----------------------------------------------------------
 
 .segment-icon {
     color: var(--text-secondary);
     justify-content: center;
     padding: 0;
     text-decoration: none;
+    transition:
+        background var(--transition-fast) var(--transition-curve),
+        border-color var(--transition-fast) var(--transition-curve),
+        color var(--transition-fast) var(--transition-curve);
     width: var(--space-6);
+
+    &:hover,
+    &:focus-visible {
+        background: var(--background-tertiary);
+        border-color: var(--border-strong);
+        color: var(--text-primary);
+        text-decoration: none;
+    }
+
+    svg {
+        height: var(--space-4);
+        width: var(--space-4);
+    }
 }
 
-.segment-icon:hover {
-    background: var(--background-tertiary);
-    border-color: var(--border-strong);
-    color: var(--text-primary);
-}
+// ----------------------------------------------------------
+// Responsive Footer
+// ----------------------------------------------------------
 
-.segment-icon svg {
-    height: var(--space-4);
-    width: var(--space-4);
+@include mobile {
+    .statusline {
+        padding-inline: var(--space-2);
+    }
+
+    .segment {
+        font-size: var(--fs-xs);
+    }
 }
