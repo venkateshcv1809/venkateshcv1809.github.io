@@ -1,5 +1,25 @@
-url: "https://venkateshcv1809.github.io"
+# Metadata
+title: VENKATESH C V
+
+description: >
+    Personal portfolio, technical blogs, notes, and experiments.
+
+url: https://venkateshcv1809.github.io
 baseurl: ""
+
+author:
+    name: VENKATESH C V
+    url: https://venkateshcv1809.github.io/
+
+logo: /assets/favicon/android-chrome-512x512.png
+
+social:
+    name: VENKATESH C V
+    links:
+        - https://github.com/venkateshcv1809
+        - https://www.facebook.com/venkateshcv1809
+        - https://www.linkedin.com/in/venkateshcv1809/
+        - https://x.com/venkateshcv1809
 
 # Plugin configuration
 plugins:
