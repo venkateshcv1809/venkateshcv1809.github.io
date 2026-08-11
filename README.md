@@ -5,7 +5,7 @@ Personal portfolio, technical blogs, notes, and experiments.
 🌐 [Portfolio](https://venkateshcv1809.github.io/)  
 💼 [LinkedIn](https://linkedin.com/in/venkateshcv1809)
 
-[![CI/CD](https://github.com/venkateshcv1809/venkateshcv1809.github.io/actions/workflows/deploy.yaml/badge.svg?branch=main)](https://github.com/venkateshcv1809/venkateshcv1809.github.io/actions/workflows/deploy.yaml)
+[![CI/CD](https://github.com/venkateshcv1809/venkateshcv1809.github.io/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/venkateshcv1809/venkateshcv1809.github.io/actions/workflows/deploy.yml)
 
 ---
 
