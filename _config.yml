@@ -1,6 +1,12 @@
 url: "https://venkateshcv1809.github.io"
 baseurl: ""
 
+# Plugin configuration
+plugins:
+    - jekyll-feed
+    - jekyll-seo-tag
+    - jekyll-sitemap
+
 # Markdown renderer
 markdown: kramdown
 kramdown:
