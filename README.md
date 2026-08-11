@@ -1,55 +1,105 @@
 # VENKATESH C V
 
-🌐 Portfolio: [venkateshcv1809.github.io](https://venkateshcv1809.github.io/)  
-💼 LinkedIn: [linkedin.com/in/venkateshcv1809](https://www.linkedin.com/in/venkateshcv1809/)
+Personal portfolio, technical blogs, notes, and experiments.
+
+🌐 [Portfolio](https://venkateshcv1809.github.io/)  
+💼 [LinkedIn](https://linkedin.com/in/venkateshcv1809)
 
 [![CI/CD](https://github.com/venkateshcv1809/venkateshcv1809.github.io/actions/workflows/deploy.yaml/badge.svg?branch=main)](https://github.com/venkateshcv1809/venkateshcv1809.github.io/actions/workflows/deploy.yaml)
 
 ---
 
-## 🛠️ Architecture & Tech Stack
+## Architecture & Tech Stack
 
-This site is built utilizing a decoupled, cloud-native static site generation pipeline.
+- **Static Site Generator:** Jekyll
+- **Language:** Ruby
+- **Environment Management:** mise
+- **Task Automation:** just
+- **Deployment:** GitHub Actions → GitHub Pages
 
-* **Framework:** `Jekyll` (Ruby ecosystem)
-* **Local Environment Manager:** `mise` (for predictable tool version pinning)
-* **Task Automation:** `just` (for structured workspace shortcuts)
-* **Deployment Platform:** GitHub Actions Engine to GitHub Pages CDN
+### CI/CD
 
-### CI/CD Architecture
-Rather than utilizing standard branch-copying deployments, this repository uses a decoupled multi-job pipeline:
-1. **`build`**: Spins up an isolated Ubuntu runner to compile markdown assets via Jekyll into production artifacts, matching the local workspace signature.
-2. **`deploy`**: Dynamically streams the compiled raw assets directly to GitHub’s global edge servers via OIDC secure handshakes, keeping the Git tree and commit history perfectly clean.
+The production site is built and deployed through GitHub Actions.
+
+The pipeline:
+
+1. Builds the Jekyll site.
+2. Generates the production site in `_site/`.
+3. Deploys the generated site to GitHub Pages.
+
+The generated `_site/` directory is not committed to the repository.
 
 ---
 
-## 🚀 Local Development Setup
+## Local Development
 
-Ensure you have your environment tools installed locally (`mise`, `just`, and `bundler`).
+### Prerequisites
 
-### 1. Initialize the Environment
-Install the pinned tool dependencies and project gems:
+The project uses:
+
+- mise
+- Ruby/Bundler
+- just
+
+### Initialize the Environment
+
 ```bash
 mise install
 bundle install
 ```
 
-### 2. Available Automation Commands
-This workspace leverages a `justfile` for clean development shortcuts:
+### Development Server
 
-* Clean the Workspace:
-```bash
-just clean
-```
-
-* Boot Local Development Server: (Runs with auto-regeneration and live-reload at `http://localhost:4000`)
+Start the standard Jekyll development server:
 ```bash
 just serve
 ```
 
+The site is available at: http://localhost:4000
+
+For live reload and network access:
+```bash
+just dev
+```
+
+### Production Build
+
+```bash
+just build-prod
+```
+
+### Clean Generated Files
+```bash
+just clean
+```
+
 ---
 
-## 🌿 Branching Strategy
+## Repository Structure
 
-* `main`: Production branch. Pushes to this branch trigger the automated `CI/CD` pipeline to stream live changes directly to the production web hosting servers.
-* `develop`: Staging sandbox branch used for drafting, UI layout experiments, and styling updates.
+```
+.
+├── _config.yml
+├── _data/
+├── _includes/
+├── _layouts/
+├── _pages/
+├── _sass/
+├── assets/
+├── .github/
+├── Gemfile
+├── justfile
+└── mise.toml
+```
+
+---
+
+## Branching
+
+### `main`
+
+Production branch. Changes pushed to `main` trigger the production deployment workflow.
+
+### `develop`
+
+Development branch used for drafting, experimentation, UI work, and styling changes.
