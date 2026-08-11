@@ -1,0 +1,57 @@
+main img {
+    background: var(--background-secondary);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    display: block;
+    height: auto;
+    margin: var(--space-5) auto;
+    max-width: 100%;
+}
+
+a img {
+    transition:
+        border-color var(--transition-fast) var(--transition-curve),
+        opacity var(--transition-fast) var(--transition-curve);
+}
+
+a:hover img,
+a:focus-visible img {
+    border-color: var(--color-info);
+    opacity: 0.95;
+}
+
+figure {
+    margin: var(--space-5) 0;
+}
+
+figure img {
+    margin: 0 auto;
+}
+
+figcaption {
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
+    line-height: var(--line-height-body);
+    margin: var(--space-3) auto 0;
+    max-width: 70ch;
+    text-align: center;
+}
+
+main svg {
+    display: block;
+    height: auto;
+    margin: var(--space-5) auto;
+    max-width: 100%;
+}
+
+main video,
+main audio {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: var(--space-5) auto;
+
+    border-radius: var(--radius-md);
+}

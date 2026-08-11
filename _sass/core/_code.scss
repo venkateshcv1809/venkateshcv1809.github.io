@@ -1,0 +1,283 @@
+// ==========================================================
+// Code
+// Styling for inline code, fenced code blocks and Rouge syntax
+// highlighting.
+//
+// Rouge Token Reference:
+// https://github.com/rouge-ruby/rouge/wiki/List-of-tokens
+// ==========================================================
+
+// ----------------------------------------------------------
+// Inline Code
+// ----------------------------------------------------------
+
+code.highlighter-rouge {
+    margin: 0;
+    padding: var(--space-1) var(--space-2);
+}
+
+.highlighter-rouge {
+    background: var(--code-background);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    cursor: text;
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    margin-bottom: var(--space-5);
+    overflow-inline: auto;
+    white-space: break-spaces;
+}
+
+// ----------------------------------------------------------
+// Code Blocks
+// ----------------------------------------------------------
+
+.highlighter-rouge pre {
+    margin: 0;
+    white-space: pre;
+}
+
+.highlighter-rouge pre.highlight {
+    padding: var(--space-3) var(--space-4);
+}
+
+.highlight ::selection {
+    background: var(--selection-background);
+}
+
+// ----------------------------------------------------------
+// Rouge Table Layout
+// ----------------------------------------------------------
+
+code > .table-wrapper {
+    margin: 0;
+    overflow: visible;
+}
+
+.rouge-table {
+    background: inherit;
+    border: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: calc(var(--space-3) * -1) calc(var(--space-4) * -1);
+    overflow: inherit;
+    width: 100%;
+}
+
+.rouge-table tr:hover {
+    background: inherit;
+}
+
+.rouge-table td.rouge-gutter {
+    background: color-mix(in srgb, var(--background-secondary) 20%, transparent);
+    border-right: 1px solid color-mix(in srgb, var(--border-default) 50%, transparent);
+    color: var(--code-comment);
+    cursor: default;
+    padding: var(--space-3);
+    text-align: right;
+    user-select: none;
+    white-space: nowrap;
+    width: var(--space-7);
+}
+
+.rouge-table td.rouge-code {
+    padding: var(--space-3) var(--space-4);
+}
+
+// ----------------------------------------------------------
+// Comments
+// ----------------------------------------------------------
+
+.highlight span.c,
+.highlight span.c1,
+.highlight span.cm,
+.highlight span.cn,
+.highlight span.cp,
+.highlight span.cs,
+.highlight span.gp {
+    color: var(--code-comment);
+    font-style: italic;
+}
+
+// ----------------------------------------------------------
+// Highlighted Lines
+// ----------------------------------------------------------
+.highlight .hll {
+    background: color-mix(in srgb, var(--color-info) 12%, transparent);
+}
+
+// ----------------------------------------------------------
+// Keywords
+// ----------------------------------------------------------
+
+.highlight span.k,
+.highlight span.kc,
+.highlight span.kd,
+.highlight span.kn,
+.highlight span.kp,
+.highlight span.kr,
+.highlight span.kt,
+.highlight span.kv {
+    color: var(--code-keyword);
+}
+
+// ----------------------------------------------------------
+// Functions & Namespaces
+// ----------------------------------------------------------
+
+.highlight span.nf,
+.highlight span.nb,
+.highlight span.bp,
+.highlight span.nh,
+.highlight span.nn,
+.highlight span.no,
+.highlight span.np,
+.highlight span.nv,
+.highlight span.nx,
+.highlight span.nd,
+.highlight span.ne,
+.highlight span.nl,
+.highlight span.ni {
+    color: var(--code-function);
+}
+
+// ----------------------------------------------------------
+// Tags & Types
+// ----------------------------------------------------------
+
+// Types
+.highlight span.nc,
+.highlight span.nk {
+    color: var(--code-type);
+}
+
+// HTML/XML
+.highlight span.na,
+.highlight span.nt {
+    color: var(--code-tag);
+}
+
+// Rare Rouge tokens
+.highlight span.nw,
+.highlight span.re {
+    color: var(--code-tag);
+}
+
+// ----------------------------------------------------------
+// Numbers
+// ----------------------------------------------------------
+
+.highlight span.m,
+.highlight span.mb,
+.highlight span.mf,
+.highlight span.mh,
+.highlight span.mi,
+.highlight span.mn,
+.highlight span.mo,
+.highlight span.mx,
+.highlight span.il,
+.highlight span.l,
+.highlight span.ld {
+    color: var(--code-number);
+}
+
+// ----------------------------------------------------------
+// Strings
+// ----------------------------------------------------------
+
+.highlight span.s,
+.highlight span.s1,
+.highlight span.s2,
+.highlight span.sb,
+.highlight span.sc,
+.highlight span.sd,
+.highlight span.se,
+.highlight span.sh,
+.highlight span.si,
+.highlight span.sr,
+.highlight span.ss,
+.highlight span.sx {
+    color: var(--code-string);
+}
+
+// ----------------------------------------------------------
+// Operators & Punctuation
+// ----------------------------------------------------------
+
+.highlight span.op {
+    color: var(--code-operator);
+}
+
+.highlight span.o,
+.highlight span.ow,
+.highlight span.p,
+.highlight span.pc,
+.highlight span.pe,
+.highlight span.pn,
+.highlight span.pp,
+.highlight span.ps {
+    color: var(--code-punctuation);
+}
+
+// ----------------------------------------------------------
+// Variables
+// ----------------------------------------------------------
+
+.highlight span.v,
+.highlight span.vb,
+.highlight span.vc,
+.highlight span.vg,
+.highlight span.vi,
+.highlight span.vm,
+.highlight span.vp {
+    color: var(--code-variable);
+}
+
+// ----------------------------------------------------------
+// Generic Rouge Tokens
+// ----------------------------------------------------------
+
+.highlight span.ge {
+    font-style: italic;
+}
+
+.highlight span.gh,
+.highlight span.gs,
+.highlight span.gu {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.highlight span.go,
+.highlight span.glt,
+.highlight span.gn {
+    color: var(--text-secondary);
+}
+
+// ----------------------------------------------------------
+// Success
+// ----------------------------------------------------------
+
+.highlight span.gi {
+    color: var(--color-success);
+    font-weight: 700;
+}
+
+// ----------------------------------------------------------
+// Warning
+// ----------------------------------------------------------
+
+.highlight span.gt {
+    color: var(--color-warning);
+}
+
+// ----------------------------------------------------------
+// Errors & Diff
+// ----------------------------------------------------------
+
+.highlight span.err,
+.highlight span.gd,
+.highlight span.gr {
+    color: var(--color-danger);
+    font-weight: 700;
+}

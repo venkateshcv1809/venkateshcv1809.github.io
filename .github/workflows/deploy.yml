@@ -1,0 +1,61 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+# Allow only one concurrent deployment channel
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # ==========================================
+  # JOB 1: COMPILE AND PACK ARTIFACT
+  # ==========================================
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '4.0.5'
+          bundler-cache: true
+
+      - name: Setup Pages Configuration
+        uses: actions/configure-pages@v5
+
+      - name: Compile Static Site Files
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Upload Production Artifact
+        uses: actions/upload-pages-artifact@v3
+
+  # ==========================================
+  # JOB 2: LIVE DEPLOYMENT
+  # ==========================================
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    
+    # Restrict permissions specifically to the delivery agent
+    permissions:
+      pages: write
+      id-token: write
+      
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+      
+    steps:
+      - name: Direct Deploy to GitHub Pages Live Server
+        id: deployment
+        uses: actions/deploy-pages@v4

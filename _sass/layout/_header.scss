@@ -1,0 +1,123 @@
+@use "../core/_breakpoints" as *;
+
+// ----------------------------------------------------------
+// Navigation Bar
+// ----------------------------------------------------------
+
+.tmux-status {
+    background: var(--background-secondary);
+    border-bottom: 1px solid var(--border-default);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.tmux-status-nav {
+    align-items: center;
+    display: flex;
+    min-height: 2.75rem;
+    padding: 0 var(--space-4);
+}
+
+// ----------------------------------------------------------
+// Navigation Windows
+// ----------------------------------------------------------
+
+.tmux-status-windows {
+    align-items: center;
+    display: flex;
+    gap: var(--space-2);
+}
+
+.tmux-window {
+    align-items: stretch;
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-sm);
+    display: inline-flex;
+    overflow: hidden;
+    text-decoration: none;
+    transition:
+        border-color var(--transition-fast) var(--transition-curve);
+
+    &:hover,
+    &:focus-visible {
+        text-decoration: none;
+    }
+
+    &:not(.is-active):hover {
+        border-color: var(--border-strong);
+    }
+
+    &:focus-visible {
+        border-color: var(--color-info);
+    }
+
+    &.is-active {
+        cursor: default;
+
+        .tmux-window-icon {
+            background: var(--window-active);
+        }
+    }
+}
+
+// ----------------------------------------------------------
+// Window Identifier
+// ----------------------------------------------------------
+
+.tmux-window-icon {
+    align-items: center;
+    background: var(--window-default);
+    border-right: 1px solid var(--border-default);
+    color: var(--background-primary);
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    width: var(--space-6);
+
+    svg {
+        display: block;
+        height: var(--space-4);
+        width: var(--space-4);
+    }
+}
+
+// ----------------------------------------------------------
+// Window Title
+// ----------------------------------------------------------
+
+.tmux-window-title {
+    align-items: center;
+    background: var(--background-primary);
+    color: var(--text-primary);
+    display: inline-flex;
+    font-size: var(--fs-sm);
+    min-height: 1.25rem;
+    padding: 0 var(--space-2);
+    white-space: nowrap;
+}
+
+// ----------------------------------------------------------
+// Responsive Navigation
+// ----------------------------------------------------------
+
+@include mobile {
+    .tmux-status-nav {
+        padding-inline: var(--space-2);
+    }
+
+    .tmux-status-windows {
+        gap: var(--space-1);
+        max-width: 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .tmux-window-title {
+        font-size: var(--fs-xs);
+    }
+}

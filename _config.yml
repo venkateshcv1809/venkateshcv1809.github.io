@@ -1,0 +1,64 @@
+# Metadata
+title: VENKATESH C V
+tagline: I'm Unique
+description: >
+    Personal portfolio, technical blogs, notes, and experiments.
+
+url: https://venkateshcv1809.github.io
+baseurl: ""
+
+author:
+    name: VENKATESH C V
+    url: https://venkateshcv1809.github.io/
+
+logo: /assets/favicon/android-chrome-512x512.png
+
+social:
+    name: VENKATESH C V
+    links:
+        - https://github.com/venkateshcv1809
+        - https://www.facebook.com/venkateshcv1809
+        - https://www.linkedin.com/in/venkateshcv1809/
+        - https://x.com/venkateshcv1809
+
+# Plugin configuration
+plugins:
+    - jekyll-feed
+    - jekyll-seo-tag
+    - jekyll-sitemap
+
+# Markdown renderer
+markdown: kramdown
+kramdown:
+    input: GFM
+    syntax_highlighter: rouge
+    syntax_highlighter_opts:
+        block:
+            line_numbers: true
+    smart_quotes: lsquo,rsquo,ldquo,rdquo
+    hard_wrap: false
+    auto_ids: true
+    footnote_nr: 1
+
+sass:
+    style: compressed
+    sourcemap: development
+    quiet_deps: true
+
+collections:
+    pages:
+        output: true
+        permalink: /:name
+
+exclude:
+    - Gemfile
+    - Gemfile.lock
+    - README.md
+    - .jekyll-cache
+    - .bundle
+    - vendor
+    - _site
+    - justfile
+    - .justfile
+    - mise.toml
+    - mise.lock

@@ -1,0 +1,36 @@
+@use "../core/_breakpoints" as *;
+
+// ==========================================================
+// Page Layout
+// ==========================================================
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+// ----------------------------------------------------------
+// Main Content
+// ----------------------------------------------------------
+
+.layout {
+    flex: 1;
+    margin-inline: auto;
+    padding-block: var(--space-7);
+    padding-inline: var(--space-4);
+    width: min(100%, var(--content-width));
+}
+
+
+// ----------------------------------------------------------
+// Responsive Layout
+// ----------------------------------------------------------
+
+@include mobile {
+    .layout {
+        padding-block: var(--space-5);
+        padding-inline: var(--space-3);
+    }
+}

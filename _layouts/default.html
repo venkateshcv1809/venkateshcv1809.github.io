@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% assign metadata = site.data.config.meta %}
+    {% assign navigation = site.data.config.navigation %}
+    {% include head.html %}
+
+    <body>
+        {% include header.html %}
+
+        <main class="layout">
+            {{ content }}
+        </main>
+
+        {% include footer.html %}
+    </body>
+</html>

@@ -1,0 +1,41 @@
+// ----------------------------------------------------------
+// Layout
+// ----------------------------------------------------------
+
+$content-width: 800px;
+$content-padding: 1.5rem;
+
+// ----------------------------------------------------------
+// Breakpoints
+// ----------------------------------------------------------
+
+$mobile-max: 768px;
+$tablet-max: 1024px;
+
+// ----------------------------------------------------------
+// Media Query Mixins
+// ----------------------------------------------------------
+
+@mixin mobile {
+    @media (max-width: $mobile-max) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: ($mobile-max + 1)) and (max-width: $tablet-max) {
+        @content;
+    }
+}
+
+@mixin tablet-up {
+    @media (min-width: ($mobile-max + 1)) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: ($tablet-max + 1)) {
+        @content;
+    }
+}
