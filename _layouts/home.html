@@ -2,6 +2,11 @@
 layout: default
 ---
 
+{% assign metadata = site.data.config.meta %}
+{% assign social = site.data.config.social %}
+
 <section class="home">
+    {% include card.html %}
+
     {{ content }}
 </section>
