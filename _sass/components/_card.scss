@@ -1,0 +1,252 @@
+// ==========================================================
+// Profile Card
+// ==========================================================
+
+.profile-card {
+    font-family: var(--font-mono);
+    background: var(--background-secondary);
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    color: var(--text-primary);
+    margin: var(--space-6) auto;
+    padding: var(--space-6);
+    overflow: hidden;
+    width: min(100%, 960px);
+}
+
+
+// ==========================================================
+// Main Identity Area
+// ==========================================================
+
+.profile-card-main {
+    display: grid;
+    grid-template-columns:
+        minmax(220px, 280px) 1fr;
+    min-height: 300px;
+}
+
+
+// ==========================================================
+// Profile Image
+// ==========================================================
+
+.profile-card-image {
+    overflow: hidden;
+}
+
+.profile-card-image img {
+    border-color: var(--border-active);
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+
+
+// ==========================================================
+// Profile Content
+// ==========================================================
+
+.profile-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: var(--space-7);
+}
+
+
+// ==========================================================
+// whoami Command
+// ==========================================================
+
+.profile-card-command {
+    color: var(--color-success);
+    font-size: var(--fs-md);
+    line-height: var(--line-height-heading);
+    margin: 0 0 var(--space-1);
+}
+
+
+// ==========================================================
+// Name
+// ==========================================================
+
+.profile-card-content h1 {
+    color: var(--text-primary);
+    font-size: clamp(var(--fs-2xl),
+            5vw,
+            var(--fs-3xl));
+    line-height: var(--line-height-heading);
+    margin: 0;
+    padding: var(--space-4) 0 var(--space-1);
+}
+
+
+// ==========================================================
+// Tagline
+// ==========================================================
+
+.profile-card-tagline {
+    color: var(--color-accent);
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    line-height: var(--line-height-heading);
+    margin: 0;
+}
+
+.profile-separator {
+    margin: var(--space-4);
+}
+
+
+// ==========================================================
+// Motto
+// ==========================================================
+
+.profile-card-description {
+    border-color: var(--color-accent);
+    font-size: var(--fs-md);
+    font-style: normal;
+    font-weight: 700;
+    line-height: var(--line-height-body);
+    margin: 0;
+    max-width: 52ch;
+}
+
+
+// ==========================================================
+// Location
+// ==========================================================
+
+.profile-card-location {
+    align-items: center;
+    background: var(--background-primary);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    color: var(--color-success);
+    display: inline-flex;
+    font-size: var(--fs-xs);
+    gap: var(--space-2);
+    margin-top: var(--space-5);
+    padding: var(--space-2) var(--space-3);
+}
+
+.profile-card-path {
+    color: var(--text-link);
+    text-decoration: none;
+    transition:
+        color var(--transition-fast) var(--transition-curve);
+}
+
+
+// ==========================================================
+// Social Links
+// ==========================================================
+
+.profile-card-social {
+    background: var(--background-primary);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: var(--space-5);
+    padding: var(--space-3);
+}
+
+.profile-card-social a {
+    align-items: center;
+    display: flex;
+    font-size: var(--fs-xs);
+    gap: var(--space-2);
+    justify-content: center;
+    min-width: 0;
+    padding: 0 var(--space-2);
+    text-decoration: none;
+    transition:
+        color var(--transition-fast) var(--transition-curve),
+        background-color var(--transition-fast) var(--transition-curve);
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.profile-card-social a+a {
+    border-left: 1px solid var(--border-default);
+}
+
+.profile-card-icon {
+    color: var(--color-accent);
+    display: inline-block;
+    font-size: var(--fs-lg);
+    line-height: 1;
+}
+
+
+// ==========================================================
+// Responsive
+// ==========================================================
+
+@media (max-width: 760px) {
+    .profile-card-main {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card-image {
+        width: 100%;
+        max-height: 360px;
+        aspect-ratio: 1 / 1;
+    }
+
+    .profile-card-image img {
+        width: min(100%, 360px);
+    }
+
+    .profile-card-content {
+        padding: var(--space-4) 0;
+    }
+
+    .profile-card-social {
+        grid-template-columns: 1fr;
+        padding: 0 var(--space-3);
+    }
+
+    .profile-card-social a {
+        justify-content: flex-start;
+        padding: var(--space-2) var(--space-1);
+    }
+
+    .profile-card-social a+a {
+        border-top: 1px solid var(--border-default);
+        border-left: 0;
+    }
+}
+
+
+// ==========================================================
+// Small Screens
+// ==========================================================
+
+@media (max-width: 480px) {
+
+    .profile-card {
+        margin: var(--space-4) 0;
+        border-radius: var(--radius-md);
+    }
+
+    .profile-card-content h1 {
+        font-size: var(--fs-2xl);
+    }
+
+    .profile-card-social {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card-social a {
+        justify-content: flex-start;
+    }
+}

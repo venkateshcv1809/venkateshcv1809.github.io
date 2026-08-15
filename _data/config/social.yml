@@ -1,10 +1,18 @@
+facebook:
+    username: venkateshcv1809
+    url: https://facebook.com/venkateshcv1809
+
 github:
-  username: venkateshcv1809
-  url: https://github.com/venkateshcv1809
+    username: venkateshcv1809
+    url: https://github.com/venkateshcv1809
 
 linkedin:
-  username: venkateshcv1809
-  url: https://linkedin.com/in/venkateshcv1809
+    username: venkateshcv1809
+    url: https://linkedin.com/in/venkateshcv1809
+
+x:
+    username: venkateshcv1809
+    url: https://x.com/venkateshcv1809
 
 email:
-  address: venkateshvairam@gmail.com
+    address: venkateshvairam@gmail.com
