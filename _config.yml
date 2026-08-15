@@ -7,6 +7,12 @@ description: >
 url: https://venkateshcv1809.github.io
 baseurl: ""
 
+defaults:
+    - scope:
+          path: ""
+      values:
+          image: /assets/images/profile-card-dark.png
+
 author:
     name: VENKATESH C V
     url: https://venkateshcv1809.github.io/
