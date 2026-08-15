@@ -1,0 +1,71 @@
+{% assign metadata = site.data.config.meta %}
+{% assign social = site.data.config.social %}
+
+<section class="profile-card" aria-labelledby="profile-card-name">
+    <div class="profile-card-main">
+        <div class="profile-card-image">
+            <picture>
+                <source media="(max-width: 760px)" srcset="{{ '/assets/images/profile-square.jpg' | relative_url }}" />
+
+                <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="{{ site.title }}" />
+            </picture>
+        </div>
+
+        <div class="profile-card-content">
+
+            <p class="profile-card-command" aria-hidden="true">
+                &gt; whoami
+            </p>
+
+            <h1 id="profile-card-name">
+                {{ site.title }}
+            </h1>
+
+            <p class="profile-card-tagline">
+                {{ site.tagline }}
+            </p>
+
+            <hr class="profile-separator" />
+
+            <blockquote class="profile-card-description">
+                BUILDING IDEAS.<br>
+                ENGINEERING SOLUTIONS.
+            </blockquote>
+
+            <div class="profile-card-location">
+                <span aria-hidden="true">:icon-terminal:</span>
+
+                <a class="profile-card-path" href="{{ site.url | append: site.baseurl }}"
+                    aria-label="Visit {{ site.title }} portfolio">
+                    {{ site.url | replace: 'https://', '' | replace: 'http://', '' }}
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="profile-card-social" aria-label="Social profiles">
+        {% if social.email.address %}
+        <a href="mailto:{{ social.email.address }}" aria-label="Email {{ site.title }}">
+            <span aria-hidden="true" class="profile-card-icon">:icon-envelope:</span>
+            <span>{{ social.email.address }}</span>
+        </a>
+        {% endif %}
+
+        {% if social.github.url %}
+        <a href="{{ social.github.url }}" target="_blank" rel="noopener noreferrer"
+            aria-label="{{ site.title }} on GitHub">
+            <span aria-hidden="true" class="profile-card-icon">:icon-square-github:</span>
+            <span>/{{ social.github.username }}</span>
+        </a>
+        {% endif %}
+
+
+        {% if social.linkedin.url %}
+        <a href="{{ social.linkedin.url }}" target="_blank" rel="noopener noreferrer"
+            aria-label="{{ site.title }} on LinkedIn">
+            <span aria-hidden="true" class="profile-card-icon">:icon-square-linkedin:</span>
+            <span>/in/{{ social.linkedin.username }}</span>
+        </a>
+        {% endif %}
+    </nav>
+</section>
