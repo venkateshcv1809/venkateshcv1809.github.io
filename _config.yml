@@ -54,7 +54,9 @@ sass:
 collections:
     pages:
         output: true
-        permalink: /:name
+        permalink: /:path/
+    projects:
+        output: true
 
 exclude:
     - Gemfile
