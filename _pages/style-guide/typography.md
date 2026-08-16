@@ -1,7 +1,6 @@
 ---
-layout: default
+layout: page
 title: Typography
-permalink: /style-guide/typography/
 ---
 
 # Typography

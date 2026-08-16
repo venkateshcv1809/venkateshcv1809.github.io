@@ -1,7 +1,6 @@
 ---
-layout: default
+layout: page
 title: Markdown
-permalink: /style-guide/markdown/
 ---
 
 # Markdown

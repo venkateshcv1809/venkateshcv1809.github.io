@@ -1,7 +1,6 @@
 ---
-layout: default
+layout: page
 title: Media
-permalink: /style-guide/media/
 ---
 
 # Media
