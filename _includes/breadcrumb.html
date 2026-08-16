@@ -1,0 +1,27 @@
+{% unless page.url == "/" %}
+    {% assign segments = page.url | split: "/" %}
+    {% assign path = "" %}
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+            <li>
+                <a href="{{ "/" | relative_url }}">~</a>
+            </li>
+
+            {% for segment in segments %}
+                {% unless segment == "" %}
+                    {% assign path = path | append: "/" | append: segment %}
+                    <li>
+                        {% if forloop.last %}
+                            <span aria-current="page">{{ page.title | default: segment }}</span>
+                        {% else %}
+                            <a href="{{ path | append: "/" | relative_url }}">
+                                {{ segment | replace: "-", " " | capitalize }}
+                            </a>
+                        {% endif %}
+                    </li>
+                {% endunless %}
+            {% endfor %}
+        </ol>
+    </nav>
+{% endunless %}

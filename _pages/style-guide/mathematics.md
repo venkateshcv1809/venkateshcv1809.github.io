@@ -1,7 +1,6 @@
 ---
-layout: default
+layout: page
 title: Mathematics
-permalink: /style-guide/mathematics/
 ---
 
 # Mathematics

@@ -1,7 +1,6 @@
 ---
-layout: default
+layout: page
 title: Code Showcase
-permalink: /style-guide/code/
 ---
 
 # Code Showcase

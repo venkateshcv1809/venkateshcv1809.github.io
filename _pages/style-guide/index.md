@@ -1,7 +1,6 @@
 ---
-layout: default
-title: Theme Showcase
-permalink: /style-guide/
+layout: page
+title: Style Guide
 ---
 
 # Style Guide

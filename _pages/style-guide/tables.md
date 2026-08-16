@@ -1,7 +1,6 @@
 ---
-layout: default
+layout: page
 title: Tables
-permalink: /style-guide/tables/
 ---
 
 # Tables

@@ -1,7 +1,6 @@
 ---
-layout: default
+layout: page
 title: Plugins
-permalink: /style-guide/plugins/
 ---
 
 # Plugins
