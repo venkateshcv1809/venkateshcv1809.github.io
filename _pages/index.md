@@ -1,9 +1,10 @@
 ---
 layout: home
 title: VENKATESH C V
+description: Personal portfolio focused on systems, software engineering, developer tooling, and low-level computing.
 ---
 
-## Current focus
+## Current focus :emoji-hammer-and-wrench:
 
 I'm building a stronger foundation in systems and software engineering by
 working closer to the tools and machines underneath everyday applications.
@@ -16,7 +17,7 @@ Right now I'm focused on:
 - exploring systems programming and low-level concepts
 - gradually moving from software toward hardware and embedded systems
 
-## Exploring
+## Exploring :emoji-magnifying-glass-tilted-right:
 
 I'm interested in understanding how things work underneath the abstractions
 we normally take for granted.
