@@ -1,0 +1,16 @@
+{% assign namespace =  search_namespace | default: "default" %}
+
+<div class="search-bar">
+    <label class="search-label">
+        <span>Search</span>
+        <input
+            type="search"
+            data-{{ namespace }}-search
+            placeholder="Search {{ search_title | downcase }}"
+            autocomplete="off">
+    </label>
+
+    <p class="search-count" data-{{ namespace }}-count>
+        {{ search_result_count }} item{% unless search_result_count == 1 %}s{% endunless %}
+    </p>
+</div>
