@@ -3,9 +3,9 @@ layout: default
 permalink: /404.html
 ---
 
-<section class="error-page">
+<section class="error-page" aria-label="Error page">
     <div class="error-page-content">
-        <p class="error-code">404</p>
+        <p class="error-code" role="alert" aria-live="assertive">404</p>
 
         <h1>Page not found</h1>
 
@@ -20,7 +20,7 @@ permalink: /404.html
             or it may have moved.
         </p>
 
-        <a href="{{ '/' | relative_url }}">
+        <a href="{{ '/' | relative_url }}" aria-label="Return to home page">
             :icon-terminal: Return home
         </a>
     </div>
