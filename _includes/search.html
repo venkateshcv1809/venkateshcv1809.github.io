@@ -1,0 +1,20 @@
+{% assign namespace = include.namespace | default: "default" %}
+{% assign title = include.title | default: namespace %}
+
+<div class="search-bar">
+    <label class="search-label" for="{{ namespace }}-search">
+        <span>Search</span>
+        <input
+            id="{{ namespace }}-search"
+            type="search"
+            name="{{ namespace }}-search"
+            data-{{ namespace }}-search
+            placeholder="Search {{ title }}"
+            autocomplete="off"
+            aria-label="Search {{ title }}">
+    </label>
+
+    <p class="search-count" data-{{ namespace }}-count aria-live="polite">
+        {{ include.search_result_count }} item{% unless include.search_result_count == 1 %}s{% endunless %}
+    </p>
+</div>

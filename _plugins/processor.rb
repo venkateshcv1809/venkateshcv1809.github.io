@@ -29,8 +29,7 @@ module Jekyll
     ].freeze
 
     HTML_PATTERNS = [
-      %r{<head\b[^>]*>.*?</head>}mi,
-      %r{<script\b[^>]*>.*?</script>}mi,
+      %r{<meta\b[^>]*>}mi,
       %r{<style\b[^>]*>.*?</style>}mi,
       %r{<pre\b[^>]*>.*?</pre>}mi,
       %r{<code\b[^>]*>.*?</code>}mi

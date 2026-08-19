@@ -2,6 +2,154 @@
 layout: page
 ---
 
-<section class="collection" data-collection>
+{% assign collection_name = page.items_collection | default: page.collection %}
+{% assign collection_items = site[collection_name] %}
+{% assign namespace = page.title | downcase | replace: " ", "-" %}
+{% assign page_size = page.page_size | default: 10 %}
+
+<section class="collection" data-{{ namespace }}-collection aria-label="{{ page.title }}">
+
     {{ content }}
+
+    {% if collection_items.size > 0 %}
+        {% include search.html
+            namespace=namespace
+            title=page.title
+            search_result_count=collection_items.size
+        %}
+
+        <dl class="collection-list" data-{{ namespace }}-list data-page-size="{{ page_size }}"
+            aria-label="{{ page.title }} list">
+
+            <ul role="list" class="collection-list-items">
+                {% for item in collection_items %}
+                    {% unless item.layout == "collection" %}
+                        <li class="collection-item" data-{{ namespace }}-item>
+
+                            <dt>
+                                <a href="{{ item.url | relative_url }}">
+                                    {{ item.title }}
+                                </a>
+                            </dt>
+
+                            {% if item.description %}
+                                <dd>{{ item.description }}</dd>
+                            {% endif %}
+                        </li>
+                    {% endunless %}
+                {% endfor %}
+            </ul>
+        </dl>
+
+        <p class="collection-empty" data-{{ namespace }}-empty hidden role="status" aria-live="polite">
+            No matching items.
+        </p>
+
+        {% include pagination.html
+            namespace=namespace
+            title=page.title
+        %}
+    {% else %}
+        <hr>
+        <p class="collection-empty" role="status">
+            No items in this collection.
+        </p>
+    {% endif %}
 </section>
+
+<script>
+    (function () {
+        const collection = document.querySelector(
+            "[data-{{ namespace }}-collection]"
+        );
+
+        if (!collection) return;
+
+        const list = collection.querySelector(
+            "[data-{{ namespace }}-list]"
+        );
+
+        const pagination = window["{{ namespace }}-pagination"];
+
+        if (!list || !pagination) return;
+
+        const items = Array.from(
+            list.querySelectorAll("[data-{{ namespace }}-item]")
+        );
+
+        const pageSize =
+            Number(list.dataset.pageSize) || items.length || 1;
+
+        const count = collection.querySelector(
+            "[data-{{ namespace }}-count]"
+        );
+
+        const empty = collection.querySelector(
+            "[data-{{ namespace }}-empty]"
+        );
+
+        const search = collection.querySelector(
+            "[data-{{ namespace }}-search]"
+        );
+
+        let query = "";
+
+        function matchingItems() {
+            return items.filter((item) =>
+                item.textContent.toLowerCase().includes(query)
+            );
+        }
+
+        function render(page = 1) {
+            const matches = matchingItems();
+
+            const totalPages = matches.length === 0
+                ? 0
+                : Math.ceil(matches.length / pageSize);
+
+            const currentPage = totalPages === 0
+                ? 1
+                : Math.min(page, totalPages);
+
+            const start = (currentPage - 1) * pageSize;
+
+            const visibleItems = new Set(
+                matches.slice(start, start + pageSize)
+            );
+
+            items.forEach((item) => {
+                item.hidden = !visibleItems.has(item);
+            });
+
+            list.hidden = matches.length === 0;
+
+            if (count) {
+                count.textContent =
+                    `${matches.length} item${matches.length === 1 ? "" : "s"}`;
+            }
+
+            if (empty) {
+                empty.hidden = matches.length > 0;
+            }
+
+            pagination.setTotalPages(totalPages);
+
+            if (totalPages > 0 && currentPage !== pagination.getCurrentPage()) {
+                pagination.goTo(currentPage);
+            }
+        }
+
+        pagination.onPageChange((page) => {
+            render(page);
+        });
+
+        if (search) {
+            search.addEventListener("input", () => {
+                query = search.value.trim().toLowerCase();
+                render(1);
+            });
+        }
+
+        render();
+    }());
+</script>

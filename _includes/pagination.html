@@ -1,0 +1,166 @@
+{% assign namespace = include.namespace | default: "default" %}
+{% assign title = include.title | default: "Pagination" %}
+
+<nav class="pagination" data-{{ namespace }}-pagination aria-label="{{ title }}" hidden>
+    <button type="button" data-{{ namespace }}-pagination-previous disabled>
+        Previous
+    </button>
+
+    <span data-{{ namespace }}-pagination-pages></span>
+
+    <button type="button" data-{{ namespace }}-pagination-next disabled>
+        Next
+    </button>
+</nav>
+
+<script>
+    (function () {
+        const pagination = document.querySelector(
+            "[data-{{ namespace }}-pagination]"
+        );
+
+        const paginationKey = "{{ namespace }}-pagination";
+
+        if (!pagination) return;
+
+        const previousButton = pagination.querySelector(
+            "[data-{{ namespace }}-pagination-previous]"
+        );
+
+        const nextButton = pagination.querySelector(
+            "[data-{{ namespace }}-pagination-next]"
+        );
+
+        const pagesContainer = pagination.querySelector(
+            "[data-{{ namespace }}-pagination-pages]"
+        );
+
+        let currentPage = 1;
+        let totalPages = 1;
+        let pageChangeHandler = null;
+
+        function renderPages() {
+            pagesContainer.replaceChildren();
+
+            for (let page = 1; page <= totalPages; page += 1) {
+                const button = document.createElement("button");
+
+                button.type = "button";
+                button.textContent = page;
+                button.setAttribute(
+                    "data-{{ namespace }}-pagination-page",
+                    page
+                );
+
+                if (page === currentPage) {
+                    button.setAttribute("aria-current", "page");
+                }
+
+                button.addEventListener("click", function () {
+                    goTo(page);
+                });
+
+                pagesContainer.appendChild(button);
+            }
+        }
+
+        function render() {
+            pagination.hidden = totalPages <= 1;
+
+            if (totalPages <= 1) {
+                pagesContainer.replaceChildren();
+                previousButton.disabled = true;
+                nextButton.disabled = true;
+                return;
+            }
+
+            renderPages();
+
+            previousButton.disabled = currentPage === 1;
+            nextButton.disabled = currentPage === totalPages;
+        }
+
+        function setTotalPages(value) {
+            totalPages = Math.max(0, Number(value) || 0);
+
+            currentPage = totalPages === 0
+                ? 1
+                : Math.min(currentPage, totalPages);
+
+            render();
+        }
+
+        function getCurrentPage() {
+            return currentPage;
+        }
+
+        function goTo(page) {
+            if (totalPages === 0) {
+                currentPage = 1;
+                render();
+                return;
+            }
+
+            const target = Math.min(
+                Math.max(1, Number(page) || 1),
+                totalPages
+            );
+
+            if (target === currentPage) {
+                return;
+            }
+
+            currentPage = target;
+
+            if (pageChangeHandler) {
+                pageChangeHandler(currentPage);
+            }
+
+            render();
+        }
+
+        function next() {
+            goTo(currentPage + 1);
+        }
+
+        function previous() {
+            goTo(currentPage - 1);
+        }
+
+        function disableNext() {
+            nextButton.disabled = true;
+        }
+
+        function enableNext() {
+            nextButton.disabled = false;
+        }
+
+        function disablePrevious() {
+            previousButton.disabled = true;
+        }
+
+        function enablePrevious() {
+            previousButton.disabled = false;
+        }
+
+        function onPageChange(handler) {
+            pageChangeHandler = handler;
+        }
+
+        previousButton.addEventListener("click", previous);
+        nextButton.addEventListener("click", next);
+
+        window[paginationKey] = {
+            setTotalPages,
+            getCurrentPage,
+            goTo,
+            next,
+            previous,
+            disableNext,
+            enableNext,
+            disablePrevious,
+            enablePrevious,
+            onPageChange
+        };
+    }());
+</script>
