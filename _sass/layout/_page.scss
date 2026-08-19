@@ -2,3 +2,33 @@
     margin-inline: auto;
     width: min(100%, var(--reading-width));
 }
+
+.collection-list {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.collection-list-items {
+    margin: 0;
+}
+
+.collection-item {
+    padding: var(--space-5);
+
+    dt {
+        font-size: var(--fs-lg);
+        margin: 0 0 var(--space-2);
+        padding: 0;
+    }
+
+    dd {
+        color: var(--text-secondary);
+        margin: 0;
+    }
+}
+
+.collection-empty {
+    color: var(--text-muted);
+    margin-block: var(--space-5);
+}
+
