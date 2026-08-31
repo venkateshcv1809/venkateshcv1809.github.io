@@ -8,6 +8,10 @@
 
     <meta name="color-scheme" content="light dark" />
 
+    {% if page.katex %}
+    <!-- Preconnect to KaTeX CDN -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
     <!-- KaTeX -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.1/dist/katex.min.css"
         integrity="sha384-1vdNCNel6Tx/NQa8IR1mGOGKsbGreCkOPfbtPPnUURJ5Tu2PRVfQ/7KLZC+Pi1p1" crossorigin="anonymous">
@@ -30,6 +34,7 @@
             });
         });
     </script>
+    {% endif %}
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicon/apple-touch-icon.png' | relative_url }}" />
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon/favicon-32x32.png' | relative_url }}" />
