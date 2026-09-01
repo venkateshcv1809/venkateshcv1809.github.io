@@ -11,7 +11,7 @@ defaults:
     - scope:
           path: ""
       values:
-          image: /assets/images/profile-card-dark.png
+          image: /assets/images/profile-card-dark.jpg
 
 author:
     name: VENKATESH C V
