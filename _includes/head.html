@@ -4,6 +4,10 @@
 
     {% seo %}
     {% feed_meta %}
+
+    {% if site.logo %}
+    <meta property="og:logo" content="{{ site.logo | absolute_url }}" />
+    {% endif %}
     <meta name="google-site-verification" content="GCQwEQE9UV0A5pgHfRNnMZ7gwxqyaf1Eb3uLBPuueII" />
 
     <meta name="color-scheme" content="light dark" />
