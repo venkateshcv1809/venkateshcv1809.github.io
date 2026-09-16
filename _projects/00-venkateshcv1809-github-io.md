@@ -29,9 +29,9 @@ Instead of adding JavaScript build chains or heavy framework dependencies, I cho
 
 ## Technical Challenges
 
-* **Asset Pipelines:** Tuning lazy loading and image optimization plugins without slowing down local preview reloads.
-* **Metadata & Web Fonts:** Setting up Open Graph paths and responsive web fonts using vanilla CSS instead of third-party runtime libraries.
-* **Structured Collections:** Customizing Jekyll collections to handle posts and projects as separate, first-class layouts.
+- **Asset Pipelines:** Tuning lazy loading and image optimization plugins without slowing down local preview reloads.
+- **Metadata & Web Fonts:** Setting up Open Graph paths and responsive web fonts using vanilla CSS instead of third-party runtime libraries.
+- **Structured Collections:** Customizing Jekyll collections to handle posts and projects as separate, first-class layouts.
 
 ## Takeaways
 
