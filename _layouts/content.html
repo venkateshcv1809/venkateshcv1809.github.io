@@ -8,5 +8,9 @@ layout: page
             {{ page.title }}{% if page.icons %} <span aria-hidden="true">:{{ page.icons }}:</span>{% endif %}
         </h1>
     {% endif %}
+
+    {% if page.collection == "posts" %}
+        {% include date.html date=page.date %}
+    {% endif %}
     {{ content }}
 </article>
