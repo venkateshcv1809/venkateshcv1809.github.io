@@ -3,5 +3,10 @@ layout: page
 ---
 
 <article class="content" aria-label="Content">
+    {% if page.title %}
+        <h1>
+            {{ page.title }}{% if page.icons %} <span aria-hidden="true">:{{ page.icons }}:</span>{% endif %}
+        </h1>
+    {% endif %}
     {{ content }}
 </article>
