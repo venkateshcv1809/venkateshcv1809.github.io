@@ -1,0 +1,7 @@
+{% assign date_value = include.date | default: page.date %}
+
+{% if date_value %}
+    <time datetime="{{ date_value | date_to_xmlschema }}">
+        {{ date_value | date: "%-d %B %Y" }}
+    </time>
+{% endif %}

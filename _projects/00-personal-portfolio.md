@@ -2,6 +2,7 @@
 layout: content
 title: Personal Portfolio
 description: Personal website and engineering log built with Jekyll, custom automation, and GitHub Actions.
+icons: emoji-sparkles
 ---
 
 :icon-globe: [Portfolio][url] \| :icon-github: [Source Code][repo] \| :icon-palette: [Style Guide][style-guide]
@@ -14,7 +15,7 @@ description: Personal website and engineering log built with Jekyll, custom auto
 
 ## Platform Requirements
 
-I wanted an independent personal space to document low-level experiments and write about systems programming without platform lock-in, algorithms, or complex CMS overhead.
+I wanted an independent personal space to document low level experiments and write about systems programming without platform lock-in, algorithms, or complex CMS overhead.
 
 My main constraint was simplicity: a pure Markdown pipeline that works seamlessly anywhere and pairs well with local CLI tools and AI workflows. Discovering that GitHub Pages natively supports Jekyll made it an easy choice: write Markdown, push to Git, and deploy automatically.
 
@@ -29,9 +30,10 @@ Instead of adding JavaScript build chains or heavy framework dependencies, I cho
 
 ## Technical Challenges
 
-- **Asset Pipelines:** Tuning lazy loading and image optimization plugins without slowing down local preview reloads.
-- **Metadata & Web Fonts:** Setting up Open Graph paths and responsive web fonts using vanilla CSS instead of third-party runtime libraries.
-- **Structured Collections:** Customizing Jekyll collections to handle posts and projects as separate, first-class layouts.
+- **Collection Architecture:** Customizing Jekyll collections and permalink generation so posts and projects behave like first class content types without a CMS.
+- **Custom Markdown Pipeline:** Extending the default rendering with custom plugins for emoji, icons, table wrapping, sub/sup formatting, and image related behavior while keeping the site static and lightweight.
+- **Search & Navigation UX:** Designing the collection pages to support list browsing, pagination, and filtering without introducing a JS framework or heavy client side dependencies.
+- **Social & Metadata Consistency:** Keeping page metadata, Open Graph tags, and fallback images coherent across content types with a minimal static site setup.
 
 ## Takeaways
 

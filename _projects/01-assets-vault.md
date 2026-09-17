@@ -1,7 +1,9 @@
 ---
 layout: content
 title: Assets Vault
-description: A local-first, zero-dependency static asset browser built for fast development workflows.
+description: A local first, zero dependency static asset browser built for fast development workflows.
+icons: emoji-locked
+image: /assets/images/og/assets-vault-og.jpg
 ---
 
 :icon-globe: [Demo][url] \| :icon-github: [Source Code][repo]
@@ -9,7 +11,7 @@ description: A local-first, zero-dependency static asset browser built for fast 
 [url]: https://venkateshcv1809.github.io/assets-vault/
 [repo]: https://github.com/venkateshcv1809/assets-vault
 
-> An offline-first catalog system built to eliminate asset search latency.
+> An offline first catalog system built to eliminate asset search latency.
 
 ## The Problem
 
@@ -19,11 +21,11 @@ Managing design assets across projects created constant friction:
 - Finding specific assets meant searching multiple library sites or opening files one by one.
 - Duplicate downloads were common because existing local assets were hard to locate.
 
-Existing tools required paid subscriptions, internet access, or heavy design software like Figma. I needed a local-first, library-agnostic system tailored to a terminal workflow rather than a design suite.
+Existing tools required paid subscriptions, internet access, or heavy design software like Figma. I needed a local-first, library agnostic system tailored to a terminal workflow rather than a design suite.
 
 ## Architecture & Design Choices
 
-The project uses a clean three-part architecture to keep data separate from presentation:
+The project uses a clean three part architecture to keep data separate from presentation:
 
 - **Vault:** Directory structure containing raw assets without build artifacts or extra metadata.
 - **Indexer:** Python script using standard libraries to scan the vault and generate a JSON catalog.
@@ -38,7 +40,7 @@ The project uses a clean three-part architecture to keep data separate from pres
 
 The indexer uses a plugin system so different asset types like icons, fonts, and emoji register their own parsers. This allowed adding new asset categories without modifying core indexing logic. 
 
-Category-based navigation and visual preview filters make it easy to browse the local library for inspiration even without exact search terms.
+Category based navigation and visual preview filters make it easy to browse the local library for inspiration even without exact search terms.
 
 ## Takeaways
 
