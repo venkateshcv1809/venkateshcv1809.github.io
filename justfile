@@ -6,7 +6,7 @@ serve:
 
 # Start local development server with live reload
 dev:
-	bundle exec jekyll serve --livereload --host 0.0.0.0
+	bundle exec jekyll serve --future --livereload --host 0.0.0.0
 
 # Build development site
 build:
