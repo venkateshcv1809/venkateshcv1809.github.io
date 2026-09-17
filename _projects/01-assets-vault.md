@@ -2,6 +2,7 @@
 layout: content
 title: Assets Vault
 description: A local-first, zero-dependency static asset browser built for fast development workflows.
+icons: emoji-locked
 ---
 
 :icon-globe: [Demo][url] \| :icon-github: [Source Code][repo]

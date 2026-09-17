@@ -2,6 +2,7 @@
 layout: content
 title: Personal Portfolio
 description: Personal website and engineering log built with Jekyll, custom automation, and GitHub Actions.
+icons: emoji-sparkles
 ---
 
 :icon-globe: [Portfolio][url] \| :icon-github: [Source Code][repo] \| :icon-palette: [Style Guide][style-guide]
