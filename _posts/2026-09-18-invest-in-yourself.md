@@ -1,7 +1,7 @@
 ---
 layout: content
 title: Invest in Yourself
-description: Reflections on self-investment, foundation, and building a self-sustaining personal ecosystem.
+description: Reflections on self investment, foundation, and building a self sustaining personal ecosystem.
 icons: emoji-plant
 image: /assets/images/og/invest-in-you-og.jpg
 ---
@@ -23,7 +23,7 @@ This alignment requires taking deliberate, calculated risks across:
 - **Mastery:**
 : Spending dedicated time rebuilding your core workflow, tools, and habits from scratch until your environment operates as a seamless extension of your thoughts.
 - **Signal:**
-: Filtering out short-term trends and hype cycles to focus energy entirely on enduring principles that compound over decades.
+: Filtering out short term trends and hype cycles to focus energy entirely on enduring principles that compound over decades.
 - **Vitality:**
 : Nurturing physical endurance, mindful presence, balanced nutrition, restorative sleep, and uninterrupted time with family. Knowing that true focus and sharp execution are impossible when your energy and relationships are depleted.
 
