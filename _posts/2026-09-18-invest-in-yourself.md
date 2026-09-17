@@ -3,6 +3,7 @@ layout: content
 title: Invest in Yourself
 description: Reflections on self-investment, foundation, and building a self-sustaining personal ecosystem.
 icons: emoji-plant
+image: /assets/images/og/invest-in-you-og.jpg
 ---
 
 > Stop chasing butterflies. Build a garden instead.
