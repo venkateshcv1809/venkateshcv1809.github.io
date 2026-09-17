@@ -33,6 +33,9 @@ plugins:
     - jekyll-seo-tag
     - jekyll-sitemap
 
+# Allow posts with future dates to build
+future: true
+
 # Markdown renderer
 markdown: kramdown
 kramdown:
