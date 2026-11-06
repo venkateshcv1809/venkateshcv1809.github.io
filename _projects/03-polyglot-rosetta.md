@@ -32,11 +32,11 @@ The Go engine powers the native `prosetta` CLI and a WebAssembly interface for b
 
 My goals for each language are:
 
-- **TypeScript — web:** apply my existing experience to web applications.
-- **Python — data:** process large datasets and automate workflows.
-- **Go — cloud and concurrency:** build services and DevOps tools.
-- **Rust — systems:** explore memory safety and performance.
-- **Zig — low-level:** explore embedded development and explicit control.
+- **TypeScript - web:** apply my existing experience to web applications.
+- **Python - data:** process large datasets and automate workflows.
+- **Go - cloud and concurrency:** build services and DevOps tools.
+- **Rust - systems:** explore memory safety and performance.
+- **Zig - low-level:** explore embedded development and explicit control.
 
 Implementing the same concept in all five gives me a way to practice the reasoning repeatedly and see how the code changes with each language.
 
