@@ -6,6 +6,7 @@ description: >
 
 url: https://venkateshcv1809.github.io
 baseurl: ""
+google_site_verification: GCQwEQE9UV0A5pgHfRNnMZ7gwxqyaf1Eb3uLBPuueII
 
 defaults:
     - scope:

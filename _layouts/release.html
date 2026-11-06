@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% assign metadata = site.data.config.meta %}
+    {% include head.html %}
+
+    <body>
+        <main class="layout{% if page.wide %} layout-wide{% endif %}" role="main">
+            {% include breadcrumb.html %}
+            
+            <article class="page" aria-label="Page content">
+                {% if page.title %}
+                    <h1>{{ page.title }}</h1>
+                {% endif %}
+                {{ content }}
+            </article>
+        </main>
+
+        {% include footer.html %}
+    </body>
+</html>
