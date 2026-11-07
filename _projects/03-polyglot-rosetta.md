@@ -2,6 +2,7 @@
 layout: content
 title: Polyglot Rosetta
 description: A catalog and evaluation engine for learning programming concepts across Go, Python, Rust, TypeScript, and Zig.
+icons: emoji-boomerang
 ---
 
 :icon-github: [Source Code][repo] \| :icon-file-lines: [Documentation][docs]

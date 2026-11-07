@@ -2,6 +2,7 @@
 layout: content
 title: Dotfiles
 description: A stow based development environment, installed from one bootstrap script.
+icons: emoji-gear
 ---
 
 :icon-github: [Source Code][repo]
